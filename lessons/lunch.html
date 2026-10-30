@@ -20,8 +20,23 @@
       <p>비빔밥 어때요? 저는 비빔밥을 좋아해요.</p>
       <p>좋아요. 같이 가요.</p>
     </div>
-    <audio controls preload="metadata" src="../audio/lunch-female.mp3" type="audio/mpeg"></audio>
-    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果播放器沒聲音，請點<a href="../audio/lunch-female.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/lunch-female.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:34）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/lunch-female.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
     <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
     <script>
     function readKorean(){
