@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 2 課 · 和朋友約午飯｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 2 課</span></header>
+<main>
+  <article class="lesson">
+    <p class="lesson-tag">和朋友約午飯</p>
+    <h1>오늘 날씨가 좋네요.</h1>
+    <p>約朋友吃午飯，聊聊拌飯和天氣。</p>
+    <img class="hero-img" src="../assets/lunch.jpg" alt="和朋友吃拌飯的場景">
+    <div class="korean">
+      <p>안녕하세요, 수진 씨. 오늘 날씨가 좋네요.</p>
+      <p>네, 정말 좋아요. 점심 같이 먹을까요?</p>
+      <p>비빔밥 어때요? 저는 비빔밥을 좋아해요.</p>
+      <p>좋아요. 같이 가요.</p>
+    </div>
+    <audio controls src="../audio/lunch-female.mp3"></audio>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果音頻還沒上傳到倉庫，可以點下面的備用朗讀。</p>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好，秀珍。今天天氣真好。</li>
+      <li>是啊，真的很好。一起吃午飯嗎？</li>
+      <li>拌飯怎麼樣？我喜歡拌飯。</li>
+      <li>好啊，一起去吧。</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. -네요：感嘆、確認眼前的情況</h3>
+      <p>是什麼：看到天氣、景色等，順口感嘆的說法。短文例句：오늘 날씨가 좋네요.（今天天氣真好。）再舉一例：이 커피가 맛있네요.（這咖啡真好喝。）</p>
+      <h3>2. 같이：一起</h3>
+      <p>是什麼：表示和別人一起做某事。短文例句：점심 같이 먹을까요?（一起吃午飯嗎？）再舉一例：같이 가요.（一起去吧。）</p>
+      <h3>3. 어때요?：怎麼樣？</h3>
+      <p>是什麼：詢問對方的意見、提議。短文例句：비빔밥 어때요?（拌飯怎麼樣？）再舉一例：이 영화 어때요?（這部電影怎麼樣？）</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>날씨</b> 天氣 —— 오늘 날씨가 좋네요.（今天天氣真好。）</li>
+      <li><b>점심</b> 午飯 —— 점심 같이 먹을까요?（一起吃午飯嗎？）</li>
+      <li><b>비빔밥</b> 拌飯 —— 비빔밥 어때요?（拌飯怎麼樣？）</li>
+      <li><b>좋아하다</b> 喜歡 —— 저는 비빔밥을 좋아해요.（我喜歡拌飯。）</li>
+    </ul>
+    <h2>留給你的問題</h2>
+    <p class="question">당신은 비빔밥을 좋아해요?</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 2 課</p></footer>
+</body>
+</html>
