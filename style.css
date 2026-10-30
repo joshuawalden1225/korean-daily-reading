@@ -1,0 +1,27 @@
+:root{--bg:#fff8f0;--ink:#22223b;--muted:#6b7280;--pink:#ff8fab;--blue:#a2d2ff;--yellow:#ffea9d;--card:#fff;--line:#f1e3d3}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"PingFang TC","Noto Sans TC",sans-serif;line-height:1.7}
+.hero{padding:48px 20px 8px}
+.hero-card{max-width:860px;margin:0 auto;background:linear-gradient(135deg,#fff,#ffe8ec);border:2px solid var(--line);border-radius:28px;padding:36px;box-shadow:0 12px 30px rgba(255,143,171,.18)}
+.eyebrow{letter-spacing:.12em;color:#d94f70;font-weight:700}
+h1{font-size:44px;line-height:1.2;margin:8px 0}
+.sub{color:var(--muted);font-size:18px}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:700;margin-right:10px}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.ghost{background:#fff;border:2px solid var(--ink);color:var(--ink)}
+.meta{color:var(--muted);margin-top:16px}
+main{max-width:860px;margin:0 auto;padding:20px}
+.lesson,.lesson-list{background:var(--card);border:2px solid var(--line);border-radius:24px;padding:28px;margin:24px 0}
+.lesson-tag,.card-tag{display:inline-block;background:var(--yellow);border-radius:999px;padding:4px 12px;font-weight:700}
+.korean{font-size:19px;background:#f8fbff;border-left:6px solid var(--blue);border-radius:12px;padding:16px 20px}
+.korean p{margin:6px 0}
+audio{width:100%;margin:16px 0 4px}
+.audio-note,.note,.meta{color:var(--muted)}
+.trans li,.vocab li{margin:6px 0}
+.grammar h4{margin:18px 0 4px}
+.question{font-size:19px;font-weight:700;background:#fff3bf;border-radius:12px;padding:14px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{border:2px solid var(--line);border-radius:20px;padding:18px;background:#fffdf8}
+.card a{color:#d94f70;font-weight:700;text-decoration:none}
+footer{text-align:center;color:var(--muted);padding:20px 20px 40px}
+@media(max-width:640px){h1{font-size:34px}.cards{grid-template-columns:1fr}.hero-card,.lesson,.lesson-list{padding:20px}}
