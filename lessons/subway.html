@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 3 課 · 搭地鐵問路｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 3 課 · 2026-10-31</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">搭地鐵問路</p>
+    <h1>실례합니다, 서울역까지 어떻게 가요?</h1>
+    <p>在地鐵站問路去首爾站，學會搭線、換乘和找出口的說法。</p>
+    <img class="hero-img" src="../assets/subway.jpg" alt="首爾地鐵站問路場景">
+    <div class="korean">
+      <p>실례합니다, 서울역까지 어떻게 가요?</p>
+      <p>이 역에서 지하철 2호선을 타고 가세요.</p>
+      <p>세 정거장 후에 1호선으로 갈아타야 돼요.</p>
+      <p>1호선으로 갈아타고 두 정거장 더 가면 돼요.</p>
+      <p>서울역에 내리면 출구가 바로 보여요.</p>
+      <p>정말 감사합니다, 조심해서 가세요!</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/subway.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:29）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/subway.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>不好意思，請問到首爾站要怎麼走？</li>
+      <li>請在這個站搭地鐵 2 號線前往。</li>
+      <li>三站之後，要換乘 1 號線。</li>
+      <li>換乘 1 號線後，再搭兩站就可以了。</li>
+      <li>在首爾站下車後，馬上就能看到出口。</li>
+      <li>非常感謝，請小心慢走！</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. -세요：禮貌的命令形</h3>
+      <p>是什麼：禮貌地請對方做某事。句型：動詞詞幹 + -세요。短文例句：이 역에서 지하철 2호선을 타고 가세요.（請在這個站搭地鐵 2 號線前往。）再舉一例：여기에서 기다리세요.（請在這裡等一下。）容易錯：-세요 本身已經很有禮貌，後面不要再加一個 요；也不要對自己用 -세요，說自己的打算要用 -ㄹ게요。</p>
+      <h3>2. -(으)로：方法、路線或經由</h3>
+      <p>是什麼：表示用某種方式、經由某路線，中文常譯為「用……、搭……、經由……」。句型：名詞 + (으)로；子音結尾（ㄹ 除外）用 으로，母音或 ㄹ 結尾用 로。短文例句：1호선으로 갈아타야 돼요.（要換乘 1 號線。）再舉一例：버스로 가요.（搭公車去。）容易錯：不要和表示地點的 -에서 混淆；-에서 是「在某處」，-(으)로 是「用某種方式、經由某路線」，不是目的地。</p>
+      <h3>3. -아/어야 돼요：必須……</h3>
+      <p>是什麼：表示「必須……、得……」，語氣比「可以」更肯定。句型：動詞詞幹 + -아/어야 돼요。短文例句：세 정거장 후에 1호선으로 갈아타야 돼요.（三站之後，必須換乘 1 號線。）再舉一例：내일 일찍 일어나야 돼요.（明天必須早起。）容易錯：不要和「-면 돼요」（只要……就可以了）混淆；-야 돼요 是「必須」，-면 돼요 是「這樣就夠了」，意思剛好不同。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>실례합니다</b> 不好意思、請問一下（sil-lye-ham-ni-da）—— 실례합니다, 서울역까지 어떻게 가요?</li>
+      <li><b>서울역</b> 首爾站（seo-ul-lyeok）—— 서울역까지 어떻게 가요?</li>
+      <li><b>지하철</b> 地鐵（ji-ha-cheol）—— 지하철 2호선을 타고 가세요.</li>
+      <li><b>정거장</b> 一站（jeong-geo-jang）—— 세 정거장 후에 1호선으로 갈아타야 돼요.</li>
+      <li><b>갈아타다</b> 換乘（ga-ra-ta-da）—— 1호선으로 갈아타야 돼요.</li>
+      <li><b>출구</b> 出口（chul-gu）—— 서울역에 내리면 출구가 바로 보여요.</li>
+      <li><b>조심하다</b> 小心（jo-sim-ha-da）—— 조심해서 가세요.</li>
+      <li><b>감사합니다</b> 謝謝（gam-sa-ham-ni-da）—— 정말 감사합니다.</li>
+    </ul>
+    <h2>留給你的問題</h2>
+    <p class="question">지하철을 자주 타세요?</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 3 課</p></footer>
+</body>
+</html>

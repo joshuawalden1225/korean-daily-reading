@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 5 課 · 天氣｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 5 課 · 2026-11-02</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">天氣</p>
+    <h1>안녕하세요, 오늘 날씨가 어때요?</h1>
+    <p>聊今天的天氣，學會說晴朗、刮風、下雨和帶傘的建議。</p>
+    <img class="hero-img" src="../assets/weather.jpg" alt="天氣場景：晴天、微風和雨傘">
+    <div class="korean">
+      <p>안녕하세요, 오늘 날씨가 어때요?</p>
+      <p>오늘은 맑고 따뜻해서 산책하기 좋아요.</p>
+      <p>바람이 조금 불지만 춥지 않아요.</p>
+      <p>오후에는 비가 올 수도 있다고 해요.</p>
+      <p>그래서 우산을 가지고 가는 게 좋아요.</p>
+      <p>좋은 하루 보내세요, 내일 또 만나요!</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/weather.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:27）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/weather.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好，今天天氣怎麼樣？</li>
+      <li>今天晴朗又溫暖，很適合散步。</li>
+      <li>風有一點吹，但不冷。</li>
+      <li>據說下午有可能會下雨。</li>
+      <li>所以帶著雨傘去比較好。</li>
+      <li>祝你有美好的一天，明天再見！</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. -고：又……又……、而且……</h3>
+      <p>是什麼：用來連接兩個形容詞或動詞。句型：詞幹 + -고。短文例句：오늘은 맑고 따뜻해서 산책하기 좋아요.（今天晴朗又溫暖，很適合散步。）再舉一例：이 커피는 달고 맛있어요.（這杯咖啡又甜又好喝。）容易錯：-고 連接的兩部分要是同一類的描述，不要把意思相反的兩句用 -고 連起來；要表示轉折時，應該用 -지만。</p>
+      <h3>2. -지만：但是、雖然……不過……</h3>
+      <p>是什麼：前面是事實，後面是轉折。句型：詞幹 + -지만。短文例句：바람이 조금 불지만 춥지 않아요.（風有一點吹，但不冷。）再舉一例：비가 오지만 산책하고 싶어요.（雖然下雨，但還是想散步。）容易錯：不要和表示原因的 -서 / -해서 混淆；-지만 是轉折，不是原因。</p>
+      <h3>3. -는 게 좋아요：做……比較好</h3>
+      <p>是什麼：用來給建議。句型：動詞詞幹 + -는 게 좋아요。短文例句：우산을 가지고 가는 게 좋아요.（帶著雨傘去比較好。）再舉一例：물을 많이 마시는 게 좋아요.（多喝水比較好。）容易錯：這個句型是說「做某件事比較好」，不是說某樣東西好；說東西本身好時，要用名詞 + 이/가 좋아요，例如 날씨가 좋아요。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>날씨</b> 天氣（nal-ssi）—— 오늘 날씨가 어때요?</li>
+      <li><b>맑다</b> 晴朗（mal-da）—— 오늘은 맑고 따뜻해서 산책하기 좋아요.</li>
+      <li><b>따뜻하다</b> 溫暖（tta-tteut-ha-da）—— 맑고 따뜻해서 산책하기 좋아요.</li>
+      <li><b>산책하다</b> 散步（san-chaek-ha-da）—— 산책하기 좋아요.</li>
+      <li><b>바람</b> 風（ba-ram）—— 바람이 조금 불지만 춥지 않아요.</li>
+      <li><b>비</b> 雨（bi）—— 비가 올 수도 있다고 해요.</li>
+      <li><b>우산</b> 雨傘（u-san）—— 우산을 가지고 가는 게 좋아요.</li>
+      <li><b>하루</b> 一天（ha-ru）—— 좋은 하루 보내세요.</li>
+    </ul>
+    <h2>留給你的問題</h2>
+    <p class="question">오늘 날씨 어때요?</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 5 課</p></footer>
+</body>
+</html>

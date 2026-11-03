@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 4 課 · 超市購物｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 4 課 · 2026-11-01</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">超市購物</p>
+    <h1>안녕하세요, 사과 한 개 얼마예요?</h1>
+    <p>在超市買蘋果和牛奶，學會問價錢、說數量和結帳。</p>
+    <img class="hero-img" src="../assets/supermarket.jpg" alt="超市購物場景：蘋果和牛奶">
+    <div class="korean">
+      <p>안녕하세요, 사과 한 개 얼마예요?</p>
+      <p>사과 한 개에 천 원이에요. 사과가 아주 달고 맛있어요.</p>
+      <p>그럼 사과 세 개 주세요. 우유도 한 개 주세요.</p>
+      <p>우유는 이천 원이에요. 모두 오천 원이에요.</p>
+      <p>카드로 계산할게요. 감사합니다!</p>
+      <p>안녕히 가세요! 내일 또 오세요!</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/supermarket.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:35）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/supermarket.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好，請問蘋果一個多少錢？</li>
+      <li>蘋果一個一千韓元。蘋果非常甜又好吃。</li>
+      <li>那麼請給我三個蘋果。也請給我一個牛奶。</li>
+      <li>牛奶是兩千韓元。總共是五千韓元。</li>
+      <li>我用卡結帳。謝謝！</li>
+      <li>請慢走！明天再來！</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. -이에요 / -예요：是……</h3>
+      <p>是什麼：接在名詞後面，表示「是……」，是最常用的禮貌句尾。句型：名詞 + -이에요 / -예요；子音結尾用 -이에요，母音結尾用 -예요。短文例句：사과 한 개에 천 원이에요.（蘋果一個一千韓元。）再舉一例：이거 우유예요.（這個是牛奶。）容易錯：-이에요 / -예요 只能接名詞，不能直接接動詞；它本身已經是禮貌形，後面不要再加一個 요。</p>
+      <h3>2. 주세요：請給我……</h3>
+      <p>是什麼：禮貌地請對方給自己某樣東西。句型：名詞 + 數量 + 주세요。短文例句：사과 세 개 주세요.（請給我三個蘋果。）再舉一例：물 한 잔 주세요.（請給我一杯水。）容易錯：주세요 是請別人給你東西，不要用來說自己的打算；說自己要做什麼，要用 -ㄹ게요，例如 카드로 계산할게요。</p>
+      <h3>3. -도：也……、還……</h3>
+      <p>是什麼：接在名詞後面，表示「也……、還……」。句型：名詞 + -도。短文例句：우유도 한 개 주세요.（也請給我一個牛奶。）再舉一例：저도 사과를 사요.（我也買蘋果。）容易錯：-도 要緊貼在「也」的那個名詞後面，位置放錯意思就會變；不要和表示「只有」的 -만 混淆。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>사과</b> 蘋果（sa-gwa）—— 사과가 아주 달고 맛있어요.</li>
+      <li><b>얼마</b> 多少錢（eol-ma）—— 사과 한 개 얼마예요?</li>
+      <li><b>천 원</b> 一千韓元（cheon-won）—— 사과 한 개에 천 원이에요.</li>
+      <li><b>달다</b> 甜（tal-da）—— 사과가 아주 달아요.</li>
+      <li><b>맛있다</b> 好吃（mat-it-da）—— 사과가 아주 맛있어요.</li>
+      <li><b>우유</b> 牛奶（u-yu）—— 우유도 한 개 주세요.</li>
+      <li><b>모두</b> 總共、全部（mo-du）—— 모두 오천 원이에요.</li>
+      <li><b>계산하다</b> 結帳（gye-san-ha-da）—— 카드로 계산할게요.</li>
+    </ul>
+    <h2>留給你的問題</h2>
+    <p class="question">오늘 뭐 사요?</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 4 課</p></footer>
+</body>
+</html>

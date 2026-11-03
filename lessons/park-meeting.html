@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 6 課 · 約朋友見面｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 6 課 · 2026-11-03</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">約朋友見面</p>
+    <h1>안녕하세요, 이번 토요일에 같이 만나요?</h1>
+    <p>約朋友星期六下午在公園散步，學會說打算、條件和「也可以」。</p>
+    <img class="hero-img" src="../assets/park-meeting.jpg" alt="公園約朋友見面場景">
+    <div class="korean">
+      <p>안녕하세요, 이번 토요일에 같이 만나요?</p>
+      <p>토요일 오후에 공원에서 산책해요.</p>
+      <p>저는 두 시에 공원 앞에 갈게요.</p>
+      <p>날씨가 좋으면 같이 맛있는 커피를 마셔요.</p>
+      <p>시간이 안 되면 일요일 오후에 만나도 돼요.</p>
+      <p>그럼 토요일에 만나요, 안녕히 계세요!</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/park-meeting.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:26）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/park-meeting.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好，這個星期六一起見面吧？</li>
+      <li>星期六下午在公園散步吧。</li>
+      <li>我會在兩點到公園前面。</li>
+      <li>如果天氣好，就一起喝好喝的咖啡吧。</li>
+      <li>如果時間不行，星期天下午見面也可以。</li>
+      <li>那麼星期六見，再見！</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. -(으)ㄹ게요：自己的打算或承諾</h3>
+      <p>是什麼：表示說話人自己的打算或承諾，語氣親切。句型：動詞詞幹 + -(으)ㄹ게요；母音結尾或 ㄹ 結尾用 -ㄹ게요，子音結尾用 -을게요。短文例句：저는 두 시에 공원 앞에 갈게요.（我會在兩點到公園前面。）再舉一例：내일 전화할게요.（我明天會打電話給你。）容易錯：-(으)ㄹ게요 只能說自己的打算，不能用來叫對方做事；要請對方做事時，應該用 -세요。</p>
+      <h3>2. -(으)면：如果……</h3>
+      <p>是什麼：表示「如果……」，用來提出條件。句型：動詞或形容詞詞幹 + -(으)면。短文例句：날씨가 좋으면 같이 맛있는 커피를 마셔요.（如果天氣好，就一起喝好喝的咖啡吧。）再舉一例：시간이 있으면 같이 밥을 먹어요.（如果有時間，就一起吃飯吧。）容易錯：條件句後面要接上結果，不要只說前半句就停下來；還有，-면 後面通常不直接接過去式。</p>
+      <h3>3. -도 돼요：……也可以、沒關係</h3>
+      <p>是什麼：表示「……也可以、沒關係」，用來表示許可或沒有問題。句型：動詞詞幹 + -아/어도 돼요。短文例句：일요일 오후에 만나도 돼요.（星期天下午見面也可以。）再舉一例：여기에 앉아도 돼요.（坐在這裡也可以。）容易錯：不能直接把動詞原形加上 -도 돼요，要先變成 -아/어 形，例如不能說「만날도 돼요」，要說「만나도 돼요」。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>토요일</b> 星期六（to-yo-il）—— 이번 토요일에 같이 만나요?</li>
+      <li><b>오후</b> 下午（o-hu）—— 토요일 오후에 공원에서 산책해요.</li>
+      <li><b>공원</b> 公園（gong-won）—— 공원 앞에 갈게요.</li>
+      <li><b>산책</b> 散步（san-chaek）—— 공원에서 산책해요.</li>
+      <li><b>커피</b> 咖啡（keo-pi）—— 맛있는 커피를 마셔요.</li>
+      <li><b>시간</b> 時間（si-gan）—— 시간이 안 되면 일요일 오후에 만나도 돼요.</li>
+      <li><b>일요일</b> 星期日（il-yo-il）—— 일요일 오후에 만나도 돼요.</li>
+      <li><b>만나요</b> 見面（man-na-yo）—— 같이 만나요?</li>
+    </ul>
+    <h2>留給你的問題</h2>
+    <p class="question">토요일 오후에 뭐 하고 싶어요?</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 6 課</p></footer>
+</body>
+</html>
