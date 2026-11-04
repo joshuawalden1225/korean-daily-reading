@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 7 課 · 看病｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 7 課 · 2026-11-04</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">看病</p>
+    <h1>안녕하세요, 오늘 몸이 조금 아파서 병원에 왔어요.</h1>
+    <p>身體不舒服去看病，學說頭痛、喉嚨痛、咳嗽，以及吃藥和好好休息。</p>
+    <img class="hero-img" src="../assets/doctor.jpg" alt="診所看病場景：醫生和病人親切交談">
+    <div class="korean">
+      <p>안녕하세요, 오늘 몸이 조금 아파서 병원에 왔어요.</p>
+      <p>어제부터 머리가 아프고 목도 많이 아파요.</p>
+      <p>열은 없지만 기침이 조금 나고 코도 막혀요.</p>
+      <p>약을 먹고 물을 많이 마시면 좋아요?</p>
+      <p>네, 약을 잘 드시고 오늘은 푹 쉬세요.</p>
+      <p>감사합니다, 내일 또 올게요, 안녕히 계세요!</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/doctor.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/doctor.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好，今天身體有點不舒服，所以來醫院了。</li>
+      <li>從昨天開始頭痛，喉嚨也很痛。</li>
+      <li>沒有發燒，但有點咳嗽，鼻子也塞住了。</li>
+      <li>吃藥、多喝水會比較好嗎？</li>
+      <li>是的，請好好服藥，今天好好休息。</li>
+      <li>謝謝你，明天我會再來，再見！</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. -아서 / -어서：表示原因</h3>
+      <p>是什麼：表示原因，意思像「因為……，所以……」。句型結構：動詞詞幹 + -아서 / -어서；詞幹母音是 ㅏ、ㅗ 時用 -아서，其他時候用 -어서。短文例句：오늘 몸이 조금 아파서 병원에 왔어요。（今天身體有點不舒服，所以來醫院了。）再舉一例：비가 와서 우산을 가져왔어요。（因為下雨，所以帶了雨傘。）容易錯的地方：原因在前、結果在後，不要把順序倒過來；-아서 / -어서 本身不變過去式，過去的意思放在結果句尾。</p>
+      <h3>2. -고：連接兩個動作或狀態</h3>
+      <p>是什麼：連接兩個動作或狀態，意思像「又……又……、而且……」。句型結構：動詞或形容詞詞幹 + -고。短文例句：머리가 아프고 목도 많이 아파요。（頭痛，喉嚨也很痛。）再舉一例：저는 밥을 먹고 물을 마셔요。（我吃飯，也喝水。）容易錯的地方：-고 連接的兩件事要是平行的描述，不要用 -고 表示轉折；要表示轉折時，應該用 -지만。</p>
+      <h3>3. -(으)세요：客氣的請求或建議</h3>
+      <p>是什麼：客氣的請求或建議，對別人說話時用。句型結構：動詞詞幹 + -(으)세요；母音結尾用 -세요，子音結尾用 -으세요。短文例句：오늘은 푹 쉬세요。（今天請好好休息。）再舉一例：물을 많이 마시세요。（請多喝水。）容易錯的地方：-세요 是對別人說的，不能用來說自己的動作；說自己的打算時，可以用 -ㄹ게요 或 -아요 / -어요。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>병원</b> 醫院（byeong-won，第一音輕輕讀）—— 병원에 왔어요。（來醫院了。）</li>
+      <li><b>아프다</b> 痛、不舒服（a-peu-da，讀音像「阿普達」）—— 머리가 아파요。（頭痛。）</li>
+      <li><b>머리</b> 頭（meo-ri，讀音像「莫里」）—— 머리가 아파요。（頭痛。）</li>
+      <li><b>목</b> 喉嚨、脖子（mok，短促的「莫」）—— 목도 많이 아파요。（喉嚨也很痛。）</li>
+      <li><b>기침</b> 咳嗽（gi-chim，讀音像「基沈」）—— 기침이 조금 나요。（有點咳嗽。）</li>
+      <li><b>약</b> 藥（yak，讀音像「呀」加上輕輕的 k 尾音）—— 약을 먹고。（吃藥。）</li>
+      <li><b>푹 쉬다</b> 好好休息、充分休息（puk swi-da，讀音像「普 쉬達」）—— 푹 쉬세요。（請好好休息。）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>一句一句斷開讀，逗號的地方停一下；「많이」「푹」可以稍微讀重一點，強調程度；第 4 句是問句，句尾「좋아요？」要輕輕揚起，不要讀成平調。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">오늘 몸이 어때요?</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 7 課</p></footer>
+</body>
+</html>
