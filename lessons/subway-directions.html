@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 12 課 · 地鐵問路｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 12 課 · 2026-11-09</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">地鐵問路</p>
+    <h1>실례합니다, 시청역까지 어떻게 가요?</h1>
+    <p>在地鐵站問路去市廳站，學搭線、換乘和下車的說法。</p>
+    <img class="hero-img" src="../assets/subway-directions.jpg" alt="地鐵站問路場景：向站務員問路去市廳站">
+    <div class="korean">
+      <p>실례합니다, 시청역까지 어떻게 가요?</p>
+      <p>이 지하철을 타면 돼요? 아니면 갈아타야 해요?</p>
+      <p>2호선을 타고 두 정거장 가세요.</p>
+      <p>시청역에서 내리면 바로 앞에 있어요.</p>
+      <p>아, 알겠어요. 정말 감사합니다!</p>
+      <p>천만에요. 조심해서 가세요!</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/subway-directions.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:27）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/subway-directions.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>不好意思，請問到市廳站要怎麼走？</li>
+      <li>搭這班地鐵就可以了嗎？還是要換乘呢？</li>
+      <li>請搭 2 號線，坐兩站。</li>
+      <li>在市廳站下車，前面就是了。</li>
+      <li>啊，我知道了。真的非常謝謝你！</li>
+      <li>不客氣。路上小心，慢慢走！</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. 「-까지」：表示到達的地點或範圍</h3>
+      <p>是什麼：表示到達的地點或範圍，意思像「到……為止」。句型結構：名詞 + -까지。短文例句：시청역까지 어떻게 가요?（到市廳站要怎麼走？）再舉一例：집까지 걸어서 가요.（走路走到家。）容易錯的地方：-까지 是「到」，不要和 -에서（在……／從……）混淆；說「從家到車站」時，起點用 -에서，終點用 -까지。</p>
+      <h3>2. 「-면 돼요 / -으면 돼요」：表示條件</h3>
+      <p>是什麼：表示條件，意思像「只要……就可以」。句型結構：動詞詞幹 + -면 돼요；詞幹母音是 ㅏ、ㅗ 時用 -면，其他時候用 -으면。短文例句：이 지하철을 타면 돼요?（搭這班地鐵就可以了嗎？）再舉一例：여기에 앉으면 돼요.（坐在這裡就可以了。）容易錯的地方：-면 돼요 是說「這樣做就行了」，語氣比較輕鬆；如果想正式地請求許可，要用 -아도 돼요（可以……嗎？），兩句話用法不一樣。</p>
+      <h3>3. 「-세요」：禮貌的命令形</h3>
+      <p>是什麼：禮貌的命令形，對別人說話時用，意思像「請……」。句型結構：動詞詞幹 + -세요。短文例句：두 정거장 가세요.（請坐兩站。）再舉一例：여기에 앉으세요.（請坐在這裡。）容易錯的地方：-세요 是敬語說法，對陌生人、長輩用很合適；和很熟的朋友說話時，用平語 가 就可以了，不用加 -세요。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>실례합니다</b> 不好意思、失禮了（shil-lye-ham-ni-da）—— 向陌生人問路時，先說 실례합니다 再問問題，很有禮貌。</li>
+      <li><b>시청역</b> 市廳站（shi-cheong-yeok）—— 시청역까지 어떻게 가요?（到市廳站要怎麼走？）</li>
+      <li><b>지하철</b> 地鐵（ji-ha-cheol）—— 이 지하철을 타면 돼요?（搭這班地鐵就可以了嗎？）</li>
+      <li><b>갈아타다</b> 換乘（gal-a-ta-da）—— 갈아타야 해요?（要換乘嗎？）</li>
+      <li><b>정거장</b> 站（jeong-geo-jang）—— 두 정거장 가세요.（請坐兩站。）</li>
+      <li><b>내리다</b> 下車（nae-ri-da）—— 시청역에서 내리세요.（請在市廳站下車。）</li>
+      <li><b>조심하다</b> 小心（jo-shim-ha-da）—— 조심해서 가세요!（路上小心！）</li>
+      <li><b>천만에요</b> 不客氣（cheon-man-e-yo）—— 別人說謝謝時，回答 천만에요。</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>問句句尾的 -어요? 要輕輕揚起來；「두 정거장 가세요」在「두」後面稍作停頓；「정말 감사합니다」的「정말」可以讀得重一點。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">당신은 지하철을 자주 타요?</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 12 課</p></footer>
+</body>
+</html>

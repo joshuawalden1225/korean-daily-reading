@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 9 課 · 咖啡店點餐｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 9 課 · 2026-11-06</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">咖啡店點餐</p>
+    <h1>안녕하세요, 따뜻한 아메리카노 한 잔 주세요.</h1>
+    <p>在咖啡店點一杯熱美式，學數量詞、問價錢和用卡結帳。</p>
+    <img class="hero-img" src="../assets/cafe-order.jpg" alt="咖啡店點餐場景：熱美式咖啡和結帳">
+    <div class="korean">
+      <p>안녕하세요, 따뜻한 아메리카노 한 잔 주세요.</p>
+      <p>네, 따뜻한 아메리카노 한 잔이요. 매장에서 드세요, 아니면 가져가세요?</p>
+      <p>여기서 마실게요. 얼마예요?</p>
+      <p>4,500원이에요.</p>
+      <p>카드로 할게요. 잠시만요, 여기 있어요.</p>
+      <p>감사합니다. 맛있게 드세요!</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/cafe-order.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/cafe-order.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好，請給我一杯熱美式咖啡。</li>
+      <li>好的，一杯熱美式咖啡。請問是在店裡喝，還是外帶呢？</li>
+      <li>我在這裡喝。多少錢？</li>
+      <li>是 4,500 韓元。</li>
+      <li>我用卡付。請稍等一下，卡在這裡。</li>
+      <li>謝謝。請慢慢享用！</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. 數量詞「數詞 + 量詞」：表示數量</h3>
+      <p>是什麼：韓語說數量時，順序是「名詞 + 數字 + 量詞」。句型結構：名詞 + 數詞 + 量詞（잔：杯、個：개、名：명）。短文例句：아메리카노 한 잔 주세요。（請給我一杯美式咖啡。）再舉一例：커피 두 잔 주세요。（請給我兩杯咖啡。）容易錯的地方：不要把數字放在名詞前面，說「한 잔 아메리카노」是錯的；韓語的順序和中文「一杯美式咖啡」剛好相反。</p>
+      <h3>2. -(으)로：表示方法、手段</h3>
+      <p>是什麼：表示方法、手段，意思像「用……、以……方式」。句型結構：名詞 + -로 / -으로；母音結尾用 -로，子音結尾用 -으로。短文例句：카드로 할게요。（我用卡付。）再舉一例：버스로 가요。（我坐公車去。）容易錯的地方：不要和表示地點的 -에서 搞混；-로 是「用什麼方法」，-에서 是「在哪裡」，例如「在咖啡店喝」要說 카페에서 마셔요，不是 카페로 마셔요。</p>
+      <h3>3. -ㄹ게요：表示自己的意願</h3>
+      <p>是什麼：表示說話者自己的意願或打算，意思像「我會……、我來……」。句型結構：動詞詞幹 + -ㄹ게요（母音結尾）/ -을게요（子音結尾）。短文例句：여기서 마실게요。（我在這裡喝。）再舉一例：내일 전화할게요。（我明天會打電話。）容易錯的地方：-ㄹ게요 只能說自己的動作，不能用來說別人的動作；問別人要不要做某事時，要用 -ㄹ까요，例如「一起去嗎？」要說 같이 갈까요?</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>아메리카노</b> 美式咖啡（a-me-ri-ka-no，五個音慢慢讀）—— 아메리카노 한 잔 주세요。（請給我一杯美式咖啡。）</li>
+      <li><b>따뜻하다</b> 熱的、溫暖的（tta-tteu-ta-da，第一個音是緊音，輕輕帶過）—— 따뜻한 아메리카노（熱美式咖啡）。</li>
+      <li><b>차갑다</b> 冷的、冰的（cha-gap-da，讀音像「恰嘎達」）—— 차가운 거요?（要冰的嗎？）</li>
+      <li><b>매장</b> 店內、店鋪（mae-jang，讀音像「妹將」）—— 매장에서 드세요?（在店裡喝嗎？）</li>
+      <li><b>가져가다</b> 帶走、外帶（ga-jyeo-ga-da，慢慢讀）—— 가져가세요?（要外帶嗎？）</li>
+      <li><b>얼마</b> 多少錢（eol-ma，讀音像「喔媽」）—— 얼마예요?（多少錢？）</li>
+      <li><b>카드</b> 卡、信用卡（ka-deu，讀音像「卡的」）—— 카드로 할게요。（我用卡付。）</li>
+      <li><b>맛있게 드세요</b> 請慢慢享用、請吃好喝好（ma-sit-ge deu-se-yo，慢慢讀）—— 맛있게 드세요!（請慢慢享用！）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>先一句一句斷開讀，逗號的地方停一下；數字「4,500원」讀作「사천오백 원」，慢慢讀就好；問句「얼마예요?」「가져가세요?」的句尾要輕輕揚起，像真的在問對方一樣。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">커피 좋아하세요?</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 9 課</p></footer>
+</body>
+</html>

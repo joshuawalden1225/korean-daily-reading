@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 11 課 · 打招呼與自我介紹｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 11 課 · 2026-11-08</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">打招呼與自我介紹</p>
+    <h1>안녕하세요! 처음 뵙겠습니다.</h1>
+    <p>初次見面打招呼、自我介紹，學說從哪裡來、約喝咖啡。</p>
+    <img class="hero-img" src="../assets/greeting.jpg" alt="打招呼與自我介紹場景：在咖啡店初次見面、微笑打招呼">
+    <div class="korean">
+      <p>안녕하세요! 처음 뵙겠습니다.</p>
+      <p>저는 오드리예요. 중국 베이징에서 왔어요.</p>
+      <p>지금 서울에서 한국어를 공부해요.</p>
+      <p>만나서 정말 반가워요!</p>
+      <p>우리 같이 커피 마실까요? 저는 커피를 정말 좋아해요.</p>
+      <p>좋아요! 내일 오후 세 시에 만나요.</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/greeting.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:25）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/greeting.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好！初次見面，請多指教。</li>
+      <li>我是奧德麗。我從中國北京來。</li>
+      <li>我現在在首爾學韓語。</li>
+      <li>很高興見到你！</li>
+      <li>我們一起去喝咖啡好嗎？我真的很喜歡咖啡。</li>
+      <li>好啊！明天下午三點見。</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. 「처음 뵙겠습니다」：初次見面的敬語說法</h3>
+      <p>是什麼：初次見面的敬語說法，意思像「初次見面，請多指教」。句型結構：처음 뵙겠습니다（固定說法）；뵙다 是 보다（看／見）的敬語，-겠습니다 讓語氣更鄭重。短文例句：안녕하세요! 처음 뵙겠습니다.（你好！初次見面，請多指教。）再舉一例：처음 뵙겠습니다, 저는 민준이에요.（初次見面，我是敏俊。）容易錯的地方：第一次見面不要說 처음 봐요；對長輩或剛認識的人，一定要用 뵙겠습니다 才有禮貌。</p>
+      <h3>2. 「-에서 왔어요」：表示「從……來」</h3>
+      <p>是什麼：表示「從……來」。句型結構：地方 + 에서 왔어요。短文例句：중국 베이징에서 왔어요.（我從中國北京來。）再舉一例：저는 부산에서 왔어요.（我是從釜山來的。）容易錯的地方：表示「從哪裡來」一定要用 에서，不能只用 에；에 是「在／到」的意思，意思完全不同。</p>
+      <h3>3. 「-(으)ㄹ까요?」：向對方提議</h3>
+      <p>是什麼：向對方提議，意思像「……好嗎？」。句型結構：動詞詞幹 + -(으)ㄹ까요?；詞幹沒有尾音時用 -ㄹ까요，有尾音時用 -을까요。短文例句：우리 같이 커피 마실까요?（我們一起去喝咖啡好嗎？）再舉一例：같이 점심 먹을까요?（一起吃午飯好嗎？）容易錯的地方：마시다 的詞幹沒有尾音，所以是 마실까요，不是 마실 을까요；有尾音的動詞像 먹다，要說 먹을까요。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>처음</b> 第一次、初次（cheo-eum，讀作「切-恩」）—— 처음 뵙겠습니다（初次見面）。</li>
+      <li><b>뵙겠습니다</b> 見面（敬語）（boep-ge-sseum-ni-da，讀作「別-給-森-尼-達」）—— 初次見面時說 처음 뵙겠습니다。</li>
+      <li><b>중국</b> 中國（jung-guk，讀作「中-國」）—— 중국에서 왔어요（從中國來）。</li>
+      <li><b>지금</b> 現在（ji-geum，讀作「即-今」）—— 지금 서울에서 공부해요（我現在在首爾學習）。</li>
+      <li><b>공부해요</b> 學習（gong-bu-hae-yo，讀作「工-布-嘿-喲」）—— 한국어를 공부해요（學韓語）。</li>
+      <li><b>반가워요</b> 很高興（ban-ga-wo-yo，讀作「半-嘎-窩-喲」）—— 만나서 반가워요（很高興見到你）。</li>
+      <li><b>같이</b> 一起（ga-chi，讀作「嘎-七」）—— 우리 같이 커피 마실까요?（我們一起去喝咖啡好嗎？）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>先按短句斷開來讀，一句讀完再讀下一句；「처음 뵙겠습니다」要放慢讀清楚；問句「마실까요?」句尾要輕輕揚起來；「반가워요」的 가 可以稍微重讀一點。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">당신은 어디에서 왔어요?（你從哪裡來？）</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 11 課</p></footer>
+</body>
+</html>

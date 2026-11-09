@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 8 課 · 打電話約朋友見面｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 8 課 · 2026-11-05</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">打電話約朋友見面</p>
+    <h1>여보세요, 지민 씨예요?</h1>
+    <p>打電話約朋友下午三點在學校前面的咖啡店見面，學打招呼、問時間、約地點和邊喝咖啡邊聊天。</p>
+    <img class="hero-img" src="../assets/phone-call.jpg" alt="打電話約朋友見面場景：在咖啡店裡打電話">
+    <div class="korean">
+      <p>여보세요, 지민 씨예요?</p>
+      <p>네, 저예요. 오늘 오후에 시간 있어요?</p>
+      <p>네, 오후 세 시부터 괜찮아요. 어디에서 만날까요?</p>
+      <p>학교 앞 카페에서 만나요. 커피 마시면서 이야기해요.</p>
+      <p>좋아요! 오후 세 시에 학교 앞 카페에서 봐요.</p>
+      <p>전화해 줘서 정말 고마워요. 나중에 봐요!</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/phone-call.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/phone-call.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>喂，是志旻嗎？</li>
+      <li>是的，是我。今天下午有時間嗎？</li>
+      <li>有的，從下午三點開始都可以。我們在哪裡見面呢？</li>
+      <li>在學校前面的咖啡店見面吧。邊喝咖啡邊聊天。</li>
+      <li>好啊！下午三點在學校前面的咖啡店見！</li>
+      <li>謝謝你打電話來。待會兒見！</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. -예요 / -이에요：表示判斷</h3>
+      <p>是什麼：表示判斷，意思像「是……」。句型結構：名詞 + -예요 / -이에요；母音結尾的名詞用 -예요，子音結尾的名詞用 -이에요。短文例句：지민 씨예요?（是志旻嗎？）再舉一例：저는 학생이에요。（我是學生。）容易錯的地方：子音結尾的名詞後面不能用 -예요，要用 -이에요；例如「學生」是 학생，所以是 학생이에요，不是 학생예요。</p>
+      <h3>2. -부터：表示起點</h3>
+      <p>是什麼：表示起點，意思像「從……開始」。句型結構：時間或地點 + -부터。短文例句：오후 세 시부터 괜찮아요。（從下午三點開始都可以。）再舉一例：아침 아홉 시부터 공부해요。（從早上九點開始讀書。）容易錯的地方：不要把 -부터 和 -까지 搞混；-부터 是起點，-까지 是終點，例如「從三點到五點」要說 세 시부터 다섯 시까지。</p>
+      <h3>3. -(으)면서：表示兩個動作同時進行</h3>
+      <p>是什麼：表示兩個動作同時進行，意思像「邊……邊……」。句型結構：動詞詞幹 + -면서。短文例句：커피 마시면서 이야기해요。（邊喝咖啡邊聊天。）再舉一例：음악을 들으면서 걸어요。（邊聽音樂邊走路。）容易錯的地方：兩個動作必須是同一個人同時做的，不能用 -(으)면서 接兩個不同主語的動作；也不能表示先後順序，先後順序要用 -고 或 -아서 / -어서。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>여보세요</b> 喂（打電話時的招呼語）（yeo-bo-se-yo，語尾輕輕上揚）—— 여보세요, 지민 씨예요?（喂，是志旻嗎？）</li>
+      <li><b>오후</b> 下午（o-hu，第二音輕輕讀）—— 오늘 오후에 시간 있어요?（今天下午有時間嗎？）</li>
+      <li><b>시간</b> 時間（si-gan，第一音輕輕讀）—— 시간 있어요?（有時間嗎？）</li>
+      <li><b>괜찮다</b> 可以、沒關係、不要緊（gwaen-chan-ta，慢慢讀）—— 세 시부터 괜찮아요。（從三點開始都可以。）</li>
+      <li><b>만나다</b> 見面（man-na-da，第二音是緊音的感覺，輕輕帶過就好）—— 카페에서 만나요。（在咖啡店見面吧。）</li>
+      <li><b>카페</b> 咖啡店（ka-pe，兩個音都讀得清楚）—— 학교 앞 카페에서 만나요。（在學校前面的咖啡店見面吧。）</li>
+      <li><b>전화하다</b> 打電話（jeon-hwa-ha-da）—— 전화해 줘서 고마워요。（謝謝你打電話來。）</li>
+      <li><b>나중에</b> 待會兒、之後（na-jung-e，慢慢讀）—— 나중에 봐요!（待會兒見！）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>每句在逗號和句號的地方停一下，不要一口氣讀完；「세 시」和「학교 앞 카페」要讀得清楚一點；問句「시간 있어요?」「어디에서 만날까요?」的句尾要輕輕上揚，像真的在問對方一樣。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">오늘 오후에 뭐 해요?</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 8 課</p></footer>
+</body>
+</html>

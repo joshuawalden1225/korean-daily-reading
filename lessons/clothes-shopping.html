@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 10 課 · 買衣服｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 10 課 · 2026-11-07</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">買衣服</p>
+    <h1>안녕하세요, 이 옷을 입어 봐도 돼요?</h1>
+    <p>在服裝店試穿衣服，學問價錢、選顏色和用卡結帳。</p>
+    <img class="hero-img" src="../assets/clothes-shopping.jpg" alt="買衣服場景：服裝店試穿衣服、藍色上衣和結帳">
+    <div class="korean">
+      <p>안녕하세요, 이 옷을 입어 봐도 돼요?</p>
+      <p>네, 물론이에요. 저쪽에 탈의실이 있어요.</p>
+      <p>이 옷은 얼마예요? 파란색도 있어요?</p>
+      <p>35,000원이에요. 지금 세일 중이에요.</p>
+      <p>좋아요, 파란색으로 할게요. 카드로 할게요.</p>
+      <p>감사합니다. 안녕히 가세요!</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/clothes-shopping.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/clothes-shopping.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好，請問這件衣服可以試穿嗎？</li>
+      <li>好的，當然可以。更衣室在那邊。</li>
+      <li>這件衣服多少錢？有藍色的嗎？</li>
+      <li>是 35,000 韓元。現在正在特價。</li>
+      <li>好的，我要藍色的。用卡付款。</li>
+      <li>謝謝你。慢走，再見！</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. 「-아도 돼요 / -어도 돼요」：表示請求許可</h3>
+      <p>是什麼：表示請求許可，意思像「可以……嗎？」。句型結構：動詞詞幹 + -아도 돼요 / -어도 돼요；詞幹母音是 ㅏ、ㅗ 時用 -아도，其他時候用 -어도。短文例句：이 옷을 입어 봐도 돼요?（這件衣服可以試穿嗎？）再舉一例：여기에 앉아도 돼요?（可以在這裡坐嗎？）容易錯的地方：-아도 돼요 是向對方請求許可，意思是「我可以嗎」；如果想請對方做某件事，要用「-아 주세요」，例如「이 옷을 보여 주세요」（請給我看這件衣服），兩種句型不要混用。</p>
+      <h3>2. 「-으로 / -로」：表示選擇或手段</h3>
+      <p>是什麼：表示選擇或手段，意思像「用……／以……」。句型結構：名詞 + -으로 / -로；子音結尾的名詞用 -으로，母音結尾的名詞用 -로。短文例句：파란색으로 할게요。（我要藍色的。）再舉一例：카드로 할게요。（我用卡付款。）容易錯的地方：不要和表示地點的「-에서」混淆；「-으로 / -로」說的是「用什麼、選什麼」，不是「在哪裡」。</p>
+      <h3>3. 「-도」：表示「也、還」</h3>
+      <p>是什麼：表示「也、還」，加在名詞後面。句型結構：名詞 + -도。短文例句：파란색도 있어요?（也有藍色的嗎？）再舉一例：저도 학생이에요。（我也是學生。）容易錯的地方：-도 的意思是「也」，不是連接兩個名詞的「和」；要說「A 和 B」時，要用「-하고」或「-와 / -과」，例如「커피하고 케이크」（咖啡和蛋糕）。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>옷</b> 衣服（o-t，讀作「喔特」）—— 이 옷을 입어 봐도 돼요?（這件衣服可以試穿嗎？）</li>
+      <li><b>입어 보다</b> 試穿（i-beo bo-da，讀作「一波 波大」）—— 이 옷을 입어 봐도 돼요?（這件衣服可以試穿嗎？）</li>
+      <li><b>탈의실</b> 更衣室（ta-ri-sil，讀作「他里西兒」）—— 저쪽에 탈의실이 있어요。（更衣室在那邊。）</li>
+      <li><b>얼마</b> 多少錢（eol-ma，讀作「喔兒媽」）—— 이 옷은 얼마예요?（這件衣服多少錢？）</li>
+      <li><b>파란색</b> 藍色（pa-ran-saek，讀作「趴攔塞克」）—— 파란색으로 할게요。（我要藍色的。）</li>
+      <li><b>세일</b> 特價、減價（se-il，讀作「塞一兒」）—— 지금 세일 중이에요。（現在正在特價。）</li>
+      <li><b>카드</b> 卡、信用卡（ka-deu，讀作「卡嘚」）—— 카드로 할게요。（我用卡付款。）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>一句一句慢慢讀，在逗號和句號的地方停一下；「옷」「얼마」「파란색」這幾個詞可以讀得重一點；問句的句尾要輕輕揚起來，例如「봐도 돼요?」「있어요?」，聽起來就像在提問。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">파란색을 좋아해요? 💙</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 10 課</p></footer>
+</body>
+</html>
