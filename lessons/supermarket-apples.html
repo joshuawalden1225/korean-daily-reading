@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 14 課 · 超市購物｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 14 課 · 2026-11-11</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">超市購物</p>
+    <h1>안녕하세요, 사과가 어디에 있어요?</h1>
+    <p>在超市水果區買蘋果，學問地方、問價錢和結帳。</p>
+    <img class="hero-img" src="../assets/supermarket-apples.jpg" alt="超市購物場景：水果區的蘋果">
+    <div class="korean">
+      <p>안녕하세요, 사과가 어디에 있어요?</p>
+      <p>사과는 과일 코너에 있어요. 저쪽으로 가세요.</p>
+      <p>사과 한 킬로 얼마예요?</p>
+      <p>오천 원이에요. 이 사과는 정말 달고 맛있어요.</p>
+      <p>그럼 사과 한 킬로 주세요. 카드로 계산할게요.</p>
+      <p>네, 감사합니다! 또 오세요!</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/supermarket-apples.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:30）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/supermarket-apples.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好，請問蘋果在哪裡？</li>
+      <li>蘋果在水果區。請往那邊走。</li>
+      <li>蘋果一公斤多少錢？</li>
+      <li>五千韓元。這蘋果真的很甜很好吃。</li>
+      <li>那請給我一公斤蘋果。我用卡結帳。</li>
+      <li>好的，謝謝你！歡迎再來！</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. 「-에 있어요」：表示東西在某個地方</h3>
+      <p>是什麼：表示東西在某個地方，意思像「在……」。句型結構：場所 + -에 + 있어요。短文例句：사과는 과일 코너에 있어요.（蘋果在水果區。）再舉一例：우유는 냉장고에 있어요.（牛奶在冰箱裡。）容易錯的地方：-에 있어요 是說東西「在」哪裡；表示動作發生的地點要用 -에서，例如「在超市買東西」要說 슈퍼에서 사요，不是 슈퍼에 사요。</p>
+      <h3>2. 「얼마예요?」：問價格</h3>
+      <p>是什麼：問價格，意思像「多少錢？」。句型結構：名詞 + 얼마예요? 短文例句：사과 한 킬로 얼마예요?（蘋果一公斤多少錢？）再舉一例：이 우산 얼마예요?（這把傘多少錢？）容易錯的地方：얼마예요 問的是價格；想問「幾個」的時候要用 몇 개예요?，不要說成 얼마예요?</p>
+      <h3>3. 「數詞 + 量詞」：韓語說數量時，順序是「名詞 + 數字 + 量詞」</h3>
+      <p>是什麼：韓語說數量時，順序是「名詞 + 數字 + 量詞」。句型結構：名詞 + 數詞 + 量詞（킬로：公斤、개：個、잔：杯）。短文例句：사과 한 킬로 주세요.（請給我一公斤蘋果。）再舉一例：커피 두 잔 주세요.（請給我兩杯咖啡。）容易錯的地方：不要把數字放在名詞前面，說「한 킬로 사과」是錯的；韓語的順序和中文「一公斤蘋果」剛好相反。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>사과</b> 蘋果（sa-gwa，「사」像「撒」）—— 사과 한 킬로 주세요.（請給我一公斤蘋果。）</li>
+      <li><b>과일</b> 水果（gwa-il，「과」像「瓜」）—— 사과는 과일 코너에 있어요.（蘋果在水果區。）</li>
+      <li><b>코너</b> 專區；角落（ko-neo，像英文 corner）—— 과일 코너는 저쪽이에요.（水果區在那邊。）</li>
+      <li><b>킬로</b> 公斤（kil-lo）—— 사과 한 킬로 얼마예요?（蘋果一公斤多少錢？）</li>
+      <li><b>원</b> 韓元（won，像英文 one）—— 오천 원이에요.（五千韓元。）</li>
+      <li><b>달다</b> 甜（dal-da）—— 이 사과는 정말 달아요.（這蘋果真的很甜。）</li>
+      <li><b>계산하다</b> 結帳（gye-san-ha-da）—— 카드로 계산할게요.（我用卡結帳。）</li>
+      <li><b>또 오세요</b> 歡迎再來（tto o-se-yo）—— 또 오세요!（歡迎再來！）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>先按短句斷開慢慢讀，問句（있어요? / 얼마예요?）句尾要輕輕揚起；「계산할게요」的「-할게요」要連著讀，不要一個字一個字停頓；「오천 원」裡的數字要讀得清楚一點。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">당신은 사과를 좋아해요?</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 14 課</p></footer>
+</body>
+</html>
