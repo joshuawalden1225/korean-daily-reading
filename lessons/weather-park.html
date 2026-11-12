@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 15 課 · 天氣｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 15 課 · 2026-11-12</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">天氣</p>
+    <h1>안녕하세요, 오늘 날씨가 어때요?</h1>
+    <p>聊晴朗、刮風、下雨，學問天氣、說將來和約去公園。</p>
+    <img class="hero-img" src="../assets/weather-park.jpg" alt="天氣場景：藍天、微風、雨傘和公園">
+    <div class="korean">
+      <p>안녕하세요, 오늘 날씨가 어때요?</p>
+      <p>오늘은 날씨가 정말 좋아요. 하늘이 파랗고 바람이 시원해요.</p>
+      <p>기온은 열 도예요. 조금 추워요.</p>
+      <p>내일은 비가 올 거예요. 우산을 가져가세요.</p>
+      <p>주말에는 날씨가 좋아서 공원에 가고 싶어요.</p>
+      <p>같이 공원에 갈까요?</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/weather-park.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:31）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/weather-park.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好，今天天氣怎麼樣？</li>
+      <li>今天天氣真的很好。天空很藍，風很涼爽。</li>
+      <li>氣溫是十度。有點冷。</li>
+      <li>明天會下雨。請帶雨傘。</li>
+      <li>週末天氣很好，所以我想去公園。</li>
+      <li>一起去公園，好嗎？</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. 「어때요?」：問東西或情況怎麼樣</h3>
+      <p>是什麼：問東西或情況怎麼樣，意思像「怎麼樣？」「如何？」。句型結構：名詞 + -이/가 + 어때요? 短文例句：오늘 날씨가 어때요?（今天天氣怎麼樣？）再舉一例：이 옷 어때요?（這件衣服怎麼樣？）容易錯的地方：어때요 問的是「感覺、狀態怎麼樣」；想問「什麼」的時候要用 뭐예요?，不要說成 어때요?</p>
+      <h3>2. 「-고」：連接兩個形容詞或動詞</h3>
+      <p>是什麼：連接兩個形容詞或動詞，意思像「又……又……」「……而且……」。句型結構：形容詞／動詞詞幹 + -고。短文例句：하늘이 파랗고 바람이 시원해요.（天空很藍，風很涼爽。）再舉一例：커피가 싸고 맛있어요.（咖啡便宜又好喝。）容易錯的地方：-고 前面要接詞幹，不要把 -아요/-어요 留在前面，例如「파랗고」是對的，「파라요고」是錯的。</p>
+      <h3>3. 「-(으)ㄹ 거예요」：表示將來會發生的事</h3>
+      <p>是什麼：表示將來會發生的事，意思像「會……」「要……」。句型結構：動詞詞幹 + -(으)ㄹ 거예요（詞幹尾音是母音或 ㄹ 時用 -ㄹ 거예요，其他時候用 -을 거예요）。短文例句：내일은 비가 올 거예요.（明天會下雨。）再舉一例：주말에 친구를 만날 거예요.（週末我會見朋友。）容易錯的地方：-(으)ㄹ 거예요 是說「將來」，不要用來講已經發生過的事；昨天的事情要說 -았어요/-었어요，例如「昨天去過了」是 어제 갔어요.</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>날씨</b> 天氣（nal-ssi，「날」像「那兒」的「那」）—— 오늘 날씨가 어때요?（今天天氣怎麼樣？）</li>
+      <li><b>하늘</b> 天空（ha-neul，「하」像「哈」）—— 하늘이 파랗고 바람이 시원해요.（天空很藍，風很涼爽。）</li>
+      <li><b>파랗다</b> 藍色的（pa-ra-ta）—— 하늘이 파랗아요.（天空很藍。）</li>
+      <li><b>바람</b> 風（ba-ram，「바」像「吧」）—— 바람이 시원해요.（風很涼爽。）</li>
+      <li><b>시원하다</b> 涼爽的；清爽的（si-won-ha-da）—— 오늘 바람이 시원해요.（今天風很涼爽。）</li>
+      <li><b>기온</b> 氣溫（gi-on）—— 기온은 열 도예요.（氣溫是十度。）</li>
+      <li><b>비</b> 雨（bi，像「比」）—— 내일은 비가 올 거예요.（明天會下雨。）</li>
+      <li><b>우산</b> 雨傘（u-san）—— 우산을 가져가세요.（請帶雨傘。）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>先按短句斷開慢慢讀，問句（어때요? / 갈까요?）句尾要輕輕揚起；「-고」連接的兩個形容詞要連著讀，中間不要停太久；「올 거예요」的「-ㄹ 거예요」要連讀，聽起來像一個詞。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">당신은 오늘 뭐 할 거예요?</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 15 課</p></footer>
+</body>
+</html>
