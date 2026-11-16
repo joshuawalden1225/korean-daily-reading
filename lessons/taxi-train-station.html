@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 18 課 · 坐計程車去火車站｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 18 課 · 2026-11-15</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">坐計程車去火車站</p>
+    <h1>안녕하세요, 택시 타도 돼요?</h1>
+    <p>坐計程車去火車站，學問「可不可以」、請司機開快一點，和「大約」怎麼說。</p>
+    <img class="hero-img" src="../assets/taxi-train-station.jpg" alt="坐計程車去火車站場景：黃色計程車停在火車站前，旅客提著行李箱上車">
+    <div class="korean">
+      <p>안녕하세요, 택시 타도 돼요?</p>
+      <p>네, 타세요. 어디까지 가세요?</p>
+      <p>기차역까지 가 주세요.</p>
+      <p>기차가 몇 시에 있어요?</p>
+      <p>열 시 기차예요. 조금 빨리 가 주세요.</p>
+      <p>얼마나 걸려요?</p>
+      <p>이십 분쯤 걸려요.</p>
+      <p>요금은 얼마예요?</p>
+      <p>만 오천 원쯤 돼요.</p>
+      <p>네, 알겠어요. 감사합니다.</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/taxi-train-station.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:40）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/taxi-train-station.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好，可以搭計程車嗎？</li>
+      <li>可以，請上車。你要去哪裡？</li>
+      <li>請載我去火車站。</li>
+      <li>火車是幾點的？</li>
+      <li>是十點的火車。請開快一點。</li>
+      <li>要花多久？</li>
+      <li>大約二十分鐘。</li>
+      <li>車費是多少？</li>
+      <li>大約一萬五千韓元。</li>
+      <li>好，我知道了。謝謝。</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. 「-도 돼요?」：詢問某件事可不可以做</h3>
+      <p>是什麼：詢問某件事可不可以做，意思像「可以……嗎？」句型結構：動詞詞幹 + -아도/어도 돼요?（詞幹尾音是 ㅏ 或 ㅗ 時用 -아도，其他時候用 -어도）。短文例句：택시 타도 돼요?（可以搭計程車嗎？）再舉一例：여기에 앉아도 돼요?（可以在這裡坐嗎？）容易錯的地方：-도 돼요? 是問對方「可不可以」，回答時說 네, 돼요.（可以。）或 아니요, 안 돼요.（不可以。）；돼요 不要寫成 되요，正確寫法是 돼요.</p>
+      <h3>2. 「-아/어 주세요」：請對方幫忙做某件事</h3>
+      <p>是什麼：請對方幫忙做某件事，意思像「請……」句型結構：動詞詞幹 + -아/어 주세요（詞幹尾音是 ㅏ 或 ㅗ 時用 -아 주세요，其他時候用 -어 주세요）。短文例句：기차역까지 가 주세요.（請載我去火車站。）再舉一例：조금 빨리 가 주세요.（請開快一點。）容易錯的地方：-아/어 주세요 是對別人說的客氣請求，對自己要做的事不要用；想說「我來做」的時候要用 -을게요，例如「我去買票」是 표를 살게요.</p>
+      <h3>3. 「-쯤」：表示大約的數量或時間</h3>
+      <p>是什麼：表示大約的數量或時間，意思像「大約……」「左右」句型結構：數字／時間 + -쯤。短文例句：이십 분쯤 걸려요.（大約二十分鐘。）再舉一例：세 시쯤 만나요.（三點左右見面。）容易錯的地方：-쯤 放在數字後面，不要放在數字前面，例如「大約二十分鐘」是 이십 분쯤，不要說 쯤 이십 분.</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>택시</b> 計程車（taek-si，「택」像「太克」連讀）—— 택시 타도 돼요?（可以搭計程車嗎？）</li>
+      <li><b>기차역</b> 火車站（gi-cha-yeok，「역」像「要克」連讀）—— 기차역까지 가 주세요.（請載我去火車站。）</li>
+      <li><b>기차</b> 火車（gi-cha）—— 열 시 기차예요.（是十點的火車。）</li>
+      <li><b>빨리</b> 快；趕快（ppal-li，「빨」像「把兒」連讀）—— 조금 빨리 가 주세요.（請開快一點。）</li>
+      <li><b>걸리다</b> 花（時間）；需要（geol-li-da）—— 이십 분쯤 걸려요.（大約二十分鐘。）</li>
+      <li><b>요금</b> 費用；車費（yo-geum）—— 요금은 얼마예요?（車費是多少？）</li>
+      <li><b>얼마</b> 多少（eol-ma）—— 요금은 얼마예요?（車費是多少？）</li>
+      <li><b>감사합니다</b> 謝謝（gam-sa-ham-ni-da）—— 네, 알겠어요. 감사합니다.（好，我知道了。謝謝。）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>問句的句尾 -도 돼요?、얼마예요?、걸려요? 要輕輕揚起來；第 5 句比較長，可以先分兩半讀：열 시 기차예요／조금 빨리 가 주세요，「빨리」可以稍微重讀一點；「이십 분쯤」說慢一點，把數字說清楚。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">오늘 어디에 가요? 😊</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 18 課</p></footer>
+</body>
+</html>

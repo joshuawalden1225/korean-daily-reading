@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 19 課 · 去圖書館借書｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 19 課 · 2026-11-16</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">去圖書館借書</p>
+    <h1>안녕하세요, 책을 빌리고 싶어요.</h1>
+    <p>去圖書館借書，學「想……」「可以……」和「到……為止」怎麼說。</p>
+    <img class="hero-img" src="../assets/library.jpg" alt="去圖書館借書場景：女生在圖書館櫃檯出示會員卡借書，書架和陽光">
+    <div class="korean">
+      <p>안녕하세요, 책을 빌리고 싶어요.</p>
+      <p>회원카드가 있어요?</p>
+      <p>네, 여기 있어요.</p>
+      <p>이 책을 빌릴 수 있어요?</p>
+      <p>네, 두 주 동안 빌릴 수 있어요.</p>
+      <p>언제까지 반납해요?</p>
+      <p>십일월 삼십일까지 반납하세요.</p>
+      <p>연장할 수 있어요?</p>
+      <p>네, 한 번만 연장할 수 있어요.</p>
+      <p>네, 알겠어요. 감사합니다.</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/library.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:32）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/library.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好，我想借書。</li>
+      <li>你有會員卡嗎？</li>
+      <li>有，在這裡。</li>
+      <li>我可以借這本書嗎？</li>
+      <li>可以，可以借兩個星期。</li>
+      <li>什麼時候要還？</li>
+      <li>請在十一月三十日之前歸還。</li>
+      <li>可以延長嗎？</li>
+      <li>可以，只能延長一次。</li>
+      <li>好，我知道了。謝謝。</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. 「-고 싶어요」：表達自己想做某件事</h3>
+      <p>是什麼：表達自己想做某件事，意思像「想……」。句型結構：動詞詞幹 + -고 싶어요。短文例句：책을 빌리고 싶어요.（我想借書。）再舉一例：커피를 마시고 싶어요.（我想喝咖啡。）容易錯的地方：-고 싶어요 是說自己的願望，不要用它來叫別人做事；想問別人「想不想」的時候也要用 -고 싶어요?，例如「想去嗎？」是 가고 싶어요?</p>
+      <h3>2. 「-(으)ㄹ 수 있어요」：表示有能力或有可能做某件事</h3>
+      <p>是什麼：表示有能力或有可能做某件事，意思像「可以……」「會……」。句型結構：動詞詞幹 + -(으)ㄹ 수 있어요（詞幹尾音是母音或 ㄹ 時用 -ㄹ 수 있어요，其他時候用 -을 수 있어요）。短文例句：이 책을 빌릴 수 있어요?（我可以借這本書嗎？）再舉一例：한국어로 말할 수 있어요.（我會用韓語說話。）容易錯的地方：-(으)ㄹ 수 있어요 是說「能力或可能」，不是「得到允許」；問「可不可以」的時候用 -아도/어도 돼요?，例如「可以在這裡坐嗎？」是 여기에 앉아도 돼요?</p>
+      <h3>3. 「-까지」：表示時間或空間的終點</h3>
+      <p>是什麼：表示時間或空間的終點，意思像「到……為止」「到……」。句型結構：時間／地點 + -까지。短文例句：십일월 삼십일까지 반납하세요.（請在十一月三十日之前歸還。）再舉一例：다섯 시까지 기다릴게요.（我等到五點。）容易錯的地方：-까지 是「到……為止」，說起點的時候要用 -부터，例如「從今天到星期五」是 오늘부터 금요일까지；不要把 -까지 和 -에 搞混，「三點見」是 세 시에 만나요，「到三點」才是 세 시까지.</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>도서관</b> 圖書館（do-seo-gwan，「도」像「都」）—— 도서관에서 책을 빌려요.（在圖書館借書。）</li>
+      <li><b>책</b> 書（chaek，「책」像「菜克」連讀）—— 이 책을 빌릴 수 있어요?（我可以借這本書嗎？）</li>
+      <li><b>빌리다</b> 借（bil-li-da）—— 책을 빌리고 싶어요.（我想借書。）</li>
+      <li><b>회원카드</b> 會員卡（hoe-won-ka-deu）—— 회원카드가 있어요?（你有會員卡嗎？）</li>
+      <li><b>반납하다</b> 歸還（ban-nap-ha-da）—— 십일월 삼십일까지 반납하세요.（請在十一月三十日之前歸還。）</li>
+      <li><b>주</b> 週；星期（ju）—— 두 주 동안 빌릴 수 있어요.（可以借兩個星期。）</li>
+      <li><b>연장하다</b> 延長（yeon-jang-ha-da）—— 연장할 수 있어요?（可以延長嗎？）</li>
+      <li><b>동안</b> 期間（dong-an）—— 두 주 동안 빌릴 수 있어요.（可以借兩個星期。）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>問句的句尾 -어요?、-해요? 要輕輕揚起來；第 7 句數字比較長，可以先分兩半讀：십일월／삼십일까지，「삼십일」說慢一點，把數字說清楚；「연장할 수 있어요」裡的「연장」要讀清楚。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">도서관에 자주 가요? 😊</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 19 課</p></footer>
+</body>
+</html>

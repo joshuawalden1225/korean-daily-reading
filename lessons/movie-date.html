@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 17 課 · 打電話約朋友去看電影｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 17 課 · 2026-11-14</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">打電話約朋友去看電影</p>
+    <h1>여보세요, 수진 씨? 저예요.</h1>
+    <p>打電話約朋友週末去看電影，學提議、約時間和約在江南站見面。</p>
+    <img class="hero-img" src="../assets/movie-date.jpg" alt="打電話約朋友去看電影場景：在咖啡店打電話、電影票和爆米花">
+    <div class="korean">
+      <p>여보세요, 수진 씨? 저예요.</p>
+      <p>주말에 같이 영화 보러 갈까요?</p>
+      <p>토요일 오후 세 시에 어때요?</p>
+      <p>좋아요! 어디에서 만날까요?</p>
+      <p>강남역에서 만나요. 두 시 반에 만나요.</p>
+      <p>영화가 끝나고 같이 밥 먹어요.</p>
+      <p>네, 알겠어요. 토요일에 봐요!</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/movie-date.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:30）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/movie-date.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>喂，是秀珍嗎？是我。</li>
+      <li>週末一起去看電影，好嗎？</li>
+      <li>星期六下午三點，怎麼樣？</li>
+      <li>好啊！我們在哪裡見面呢？</li>
+      <li>在江南站見面吧。兩點半見。</li>
+      <li>電影結束後一起吃飯吧。</li>
+      <li>好，我知道了。星期六見！</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. 「-까요?」：向對方提議或詢問對方意見</h3>
+      <p>是什麼：向對方提議或詢問對方意見，意思像「……好嗎？」「要不要……？」句型結構：動詞詞幹 + -(으)ㄹ까요?（詞幹尾音是母音或 ㄹ 時用 -ㄹ까요?，其他時候用 -을까요?）。短文例句：주말에 같이 영화 보러 갈까요?（週末一起去看電影，好嗎？）再舉一例：같이 커피 마실까요?（一起喝咖啡，好嗎？）容易錯的地方：-까요? 是問對方、徵求意見；自己一個人決定要做的事不要用 -까요?，要說 -을게요，例如「我去買票」是 표를 살게요.</p>
+      <h3>2. 「-(으)러 가다」：表示為了做某件事而去某個地方</h3>
+      <p>是什麼：表示為了做某件事而去某個地方，意思像「去……」。句型結構：動詞詞幹 + -(으)러 + 가다（詞幹尾音是母音或 ㄹ 時用 -러，其他時候用 -으러）。短文例句：영화 보러 갈까요?（去看電影，好嗎？）再舉一例：밥 먹으러 가요.（去吃飯。）容易錯的地方：-러 前面要接詞幹，不要把 -아요/-어요 留在前面，例如「보러」是對的，「봐요러」是錯的；-러 後面通常接 가다、오다、다니다 這類「移動」的動詞。</p>
+      <h3>3. 「-에 / -에서」：表示時間用 -에，表示動作發生的地點用 -에서</h3>
+      <p>是什麼：表示時間用 -에，表示動作發生的地點用 -에서。句型結構：時間 + -에；地點 + -에서 + 動作。短文例句：토요일 오후 세 시에 어때요?（星期六下午三點，怎麼樣？）／ 강남역에서 만나요.（在江南站見面吧。）再舉一例：아침에 학교에서 공부해요.（早上在學校讀書。）容易錯的地方：說「幾點」的時候用 -에（세 시에），不要用 -에서；說「在哪裡做某件事」的時候用 -에서（강남역에서 만나요），不要只用 -에；不過表示東西靜靜地在某處時用 -에，例如「書在桌子上」是 책이 책상 위에 있어요.</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>여보세요</b> 喂；打電話時的招呼語（yeo-bo-se-yo，「여」像「要」）—— 여보세요, 수진 씨?（喂，是秀珍嗎？）</li>
+      <li><b>주말</b> 週末（ju-mal，「주」像「主」）—— 주말에 같이 영화 보러 갈까요?（週末一起去看電影，好嗎？）</li>
+      <li><b>같이</b> 一起（ga-chi，「같」像「嘎次」連讀）—— 같이 밥 먹어요.（一起吃飯吧。）</li>
+      <li><b>영화</b> 電影（yeong-hwa，「영」像「永」）—— 영화 보러 갈까요?（去看電影，好嗎？）</li>
+      <li><b>토요일</b> 星期六（to-yo-il）—— 토요일 오후 세 시에 어때요?（星期六下午三點，怎麼樣？）</li>
+      <li><b>오후</b> 下午（o-hu，「오」像「喔」）—— 토요일 오후 세 시에 어때요?（星期六下午三點，怎麼樣？）</li>
+      <li><b>만나다</b> 見面；遇見（man-na-da）—— 강남역에서 만나요.（在江南站見面吧。）</li>
+      <li><b>끝나다</b> 結束；完（kkeut-na-da，「끝」像「可次」連讀）—— 영화가 끝나고 같이 밥 먹어요.（電影結束後一起吃飯吧。）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>打電話的開頭 여보세요 要說得輕快一點；問句的句尾 -까요? 和 어때요? 要輕輕揚起來；第 5 句比較長，可以先分兩半讀：강남역에서 만나요／두 시 반에 만나요，「두 시 반」可以稍微重讀一點。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">주말에 뭐 하고 싶어요? 😊</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 17 課</p></footer>
+</body>
+</html>
