@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 20 課 · 便利商店買東西｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 20 課 · 2026-11-17</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">便利商店買東西</p>
+    <h1>안녕하세요, 물 한 병 주세요.</h1>
+    <p>在便利商店買水、牛奶和三角飯糰，學「也」「用卡結帳」和「我來……」怎麼說。</p>
+    <img class="hero-img" src="../assets/convenience-store.jpg" alt="便利商店買東西場景：女生在便利商店櫃檯買水、牛奶和三角飯糰，店員微笑結帳">
+    <div class="korean">
+      <p>안녕하세요, 물 한 병 주세요.</p>
+      <p>우유도 한 개 주세요.</p>
+      <p>삼각김밥도 있어요?</p>
+      <p>네, 여기 있어요.</p>
+      <p>이것도 주세요.</p>
+      <p>모두 얼마예요?</p>
+      <p>오천 원이에요.</p>
+      <p>봉투가 필요해요?</p>
+      <p>아니요, 괜찮아요.</p>
+      <p>카드로 계산할게요.</p>
+      <p>영수증도 주세요.</p>
+      <p>네, 감사합니다. 안녕히 가세요.</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/convenience-store.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:36）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/convenience-store.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好，請給我一瓶水。</li>
+      <li>也請給我一盒牛奶。</li>
+      <li>也有三角飯糰嗎？</li>
+      <li>有，在這裡。</li>
+      <li>這個也請給我。</li>
+      <li>總共多少錢？</li>
+      <li>五千韓元。</li>
+      <li>需要袋子嗎？</li>
+      <li>不用，沒關係。</li>
+      <li>我用卡結帳。</li>
+      <li>也請給我收據。</li>
+      <li>好，謝謝。再見，慢走。</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. 「-도」：加在名詞後面，意思是「也」「還」</h3>
+      <p>是什麼：加在名詞後面，意思是「也」「還」，表示除了前面說的東西以外，還有別的。句型結構：名詞 + -도。短文例句：우유도 한 개 주세요.（也請給我一盒牛奶。）再舉一例：저도 학생이에요.（我也是學生。）容易錯的地方：「-도」是接在名詞後面，不要接在動詞後面；想說「我也去」的時候是 저도 가요，不要說 가도요.</p>
+      <h3>2. 「-(으)로」：表示用的工具或方法，意思像「用……」「以……」</h3>
+      <p>是什麼：表示用的工具或方法，意思像「用……」「以……」。句型結構：名詞 + -(으)로（名詞尾音是母音或 ㄹ 時用 -로，其他時候用 -으로）。短文例句：카드로 계산할게요.（我用卡結帳。）再舉一例：지하철로 가요.（我搭地鐵去。）容易錯的地方：-(으)로 是說「方法、工具」，說「在某個地方」的時候要用 -에서，例如「在便利商店買」是 편의점에서 사요，不要說成 편의점으로 사요.</p>
+      <h3>3. 「-(으)ㄹ게요」：表示自己馬上要做某件事</h3>
+      <p>是什麼：表示自己馬上要做某件事，意思像「我來……」「我會……」，帶著一種主動承諾的語氣。句型結構：動詞詞幹 + -(으)ㄹ게요（詞幹尾音是母音或 ㄹ 時用 -ㄹ게요，其他時候用 -을게요）。短文例句：카드로 계산할게요.（我用卡結帳。）再舉一例：제가 살게요.（我來買單。）容易錯的地方：-(으)ㄹ게요 只能說自己的事，不能用來說別人要做什麼；想說「他會來」的時候要用 -을 거예요，例如「他會來」是 올 거예요，不要說 올게요.</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>편의점</b> 便利商店（pyeon-ui-jeom，「편」像「片」）—— 편의점에 가요.（我去便利商店。）</li>
+      <li><b>물</b> 水（mul，「물」像「木兒」連讀）—— 물 한 병 주세요.（請給我一瓶水。）</li>
+      <li><b>우유</b> 牛奶（u-yu）—— 우유도 한 개 주세요.（也請給我一盒牛奶。）</li>
+      <li><b>삼각김밥</b> 三角飯糰（sam-gak-gim-bap）—— 삼각김밥도 있어요?（也有三角飯糰嗎？）</li>
+      <li><b>모두</b> 全部；總共（mo-du）—— 모두 얼마예요?（總共多少錢？）</li>
+      <li><b>봉투</b> 袋子（bong-tu）—— 봉투가 필요해요?（需要袋子嗎？）</li>
+      <li><b>카드</b> 卡（ka-deu）—— 카드로 계산할게요.（我用卡結帳。）</li>
+      <li><b>영수증</b> 收據（yeong-su-jeung）—— 영수증도 주세요.（也請給我收據。）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>問句的句尾 -어요?、-해요? 要輕輕揚起來；第 10 句「카드로 계산할게요」可以先分兩半讀：카드로／계산할게요，「계산할게요」說慢一點；「삼각김밥」四個音節不要趕，一個一個讀清楚。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">편의점에 자주 가요? 😊</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 20 課</p></footer>
+</body>
+</html>
