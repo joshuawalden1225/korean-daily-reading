@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 21 課 · 麵包店買麵包｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 21 課 · 2026-11-18</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">麵包店買麵包</p>
+    <h1>안녕하세요, 빵을 사고 싶어요.</h1>
+    <p>在麵包店買奶油麵包，學「請幫我……」「最」和「哪種」怎麼說。</p>
+    <img class="hero-img" src="../assets/bakery.jpg" alt="麵包店買麵包場景：女生在麵包店櫃檯挑奶油麵包，麵包師傅微笑招呼">
+    <div class="korean">
+      <p>안녕하세요, 빵을 사고 싶어요.</p>
+      <p>어떤 빵이 맛있어요?</p>
+      <p>이 크림빵이 제일 맛있어요.</p>
+      <p>두 개 주세요.</p>
+      <p>이것도 하나 주세요.</p>
+      <p>모두 얼마예요?</p>
+      <p>육천 원이에요.</p>
+      <p>포장해 주세요.</p>
+      <p>카드로 계산할게요.</p>
+      <p>내일 또 올게요.</p>
+      <p>네, 감사합니다. 안녕히 가세요.</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/bakery.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:33）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/bakery.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好，我想買麵包。</li>
+      <li>哪種麵包好吃？</li>
+      <li>這個奶油麵包最好吃。</li>
+      <li>請給我兩個。</li>
+      <li>這個也請給我一個。</li>
+      <li>總共多少錢？</li>
+      <li>六千韓元。</li>
+      <li>請幫我打包。</li>
+      <li>我用卡結帳。</li>
+      <li>我明天再來。</li>
+      <li>好，謝謝。再見，慢走。</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. 「-아/어 주세요」：請對方幫你做某件事，語氣客氣，意思像「請幫我……」</h3>
+      <p>是什麼：請對方幫你做某件事，語氣客氣，意思像「請幫我……」。句型結構：動詞詞幹 + -아/어 주세요（詞幹尾音是 ㅏ 或 ㅗ 時用 -아 주세요，其他時候用 -어 주세요）。短文例句：포장해 주세요.（請幫我打包。）再舉一例：물을 주세요.（請給我水。）容易錯的地方：-아/어 주세요 是請別人幫忙，不能用來說自己要做的事；說自己要做某事時要用 -ㄹ게요，例如 카드로 계산할게요.</p>
+      <h3>2. 「제일」：意思是「最」，放在形容詞或副詞前面，表示程度最高</h3>
+      <p>是什麼：意思是「最」，放在形容詞或副詞前面，表示程度最高。句型結構：제일 + 形容詞／副詞。短文例句：이 크림빵이 제일 맛있어요.（這個奶油麵包最好吃。）再舉一例：이 영화가 제일 재미있어요.（這部電影最好看。）容易錯的地方：제일 後面要加形容詞，不能直接加名詞；想說「最喜歡的麵包」要說 제일 좋아하는 빵，不能說 제일 빵.</p>
+      <h3>3. 「어떤」：意思是「哪種」「什麼樣的」，用來問種類或樣子，放在名詞前面</h3>
+      <p>是什麼：意思是「哪種」「什麼樣的」，用來問種類或樣子，放在名詞前面。句型結構：어떤 + 名詞。短文例句：어떤 빵이 맛있어요?（哪種麵包好吃？）再舉一例：어떤 영화를 좋아해요?（你喜歡哪種電影？）容易錯的地方：어떤 後面一定要有名詞，不能單獨說 어떤?；問「哪一個」時要用 어느 것，不是 어떤.</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>빵</b> 麵包（bbang，近似「胖」）—— 빵을 사고 싶어요.（我想買麵包。）</li>
+      <li><b>크림빵</b> 奶油麵包（keu-rim-bbang）—— 이 크림빵이 제일 맛있어요.（這個奶油麵包最好吃。）</li>
+      <li><b>맛있다</b> 好吃（ma-sit-da）—— 맛있어요 是禮貌形；例句：김치가 맛있어요.（泡菜很好吃。）</li>
+      <li><b>제일</b> 最（je-il）—— 제일 맛있어요.（最好吃。）</li>
+      <li><b>포장</b> 打包、包裝（po-jang）—— 포장해 주세요.（請幫我打包。）</li>
+      <li><b>계산하다</b> 結帳、付錢（gye-san-ha-da）—— 카드로 계산할게요.（我用卡結帳。）</li>
+      <li><b>모두</b> 總共、全部（mo-du）—— 모두 얼마예요?（總共多少錢？）</li>
+      <li><b>또</b> 再、又（tto，短促有力）—— 내일 또 올게요.（我明天再來。）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>一句一句慢慢讀，先斷在「,」和句尾；重讀 제일、두 개、또 這幾個詞；問句句尾要輕輕揚起，像 어떤 빵이 맛있어요?、모두 얼마예요?，不要讀成平調。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">당신은 어떤 빵을 좋아해요? 😊</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 21 課</p></footer>
+</body>
+</html>
