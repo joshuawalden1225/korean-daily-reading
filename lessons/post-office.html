@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 22 課 · 郵局寄包裹｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 22 課 · 2026-11-19</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">郵局寄包裹</p>
+    <h1>안녕하세요. 소포를 보내고 싶어요.</h1>
+    <p>在郵局寄包裹到釜山，學「想……」「到……」和「重／輕」怎麼說。</p>
+    <img class="hero-img" src="../assets/post-office.jpg" alt="郵局寄包裹場景：女生在郵局櫃檯寄包裹到釜山，店員微笑招呼">
+    <div class="korean">
+      <p>안녕하세요. 소포를 보내고 싶어요.</p>
+      <p>어디로 보내세요?</p>
+      <p>부산으로 보내요.</p>
+      <p>주소를 여기에 써 주세요.</p>
+      <p>이 소포가 무거워요?</p>
+      <p>아니요, 가벼워요.</p>
+      <p>얼마예요?</p>
+      <p>만 원이에요.</p>
+      <p>언제 도착해요?</p>
+      <p>내일 도착해요.</p>
+      <p>카드로 계산할게요.</p>
+      <p>감사합니다. 안녕히 가세요.</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/post-office.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:31）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/post-office.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好，我想寄一個包裹。</li>
+      <li>要寄到哪裡？</li>
+      <li>寄到釜山。</li>
+      <li>請把地址寫在這裡。</li>
+      <li>這個包裹重嗎？</li>
+      <li>不，很輕。</li>
+      <li>多少錢？</li>
+      <li>一萬韓元。</li>
+      <li>什麼時候到？</li>
+      <li>明天到。</li>
+      <li>我用卡結帳。</li>
+      <li>謝謝。再見，慢走。</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. 「-(으)로」：表示方向，意思是「往……」「到……」，接在地名後面，表示寄送或移動的方向</h3>
+      <p>是什麼：表示方向，意思是「往……」「到……」，接在地名後面，表示寄送或移動的方向。句型結構：名詞 + -(으)로（名詞尾音是子音時用 -으로，母音時用 -로）。短文例句：부산으로 보내요.（寄到釜山。）再舉一例：서울로 가요.（去首爾。）容易錯的地方：不要和表示工具的 -로 搞混；서울로 가요 是「去首爾」，카드로 계산해요 是「用卡結帳」，意思要看上下文。</p>
+      <h3>2. 「-고 싶어요」：表示說話人想做某件事，意思是「想……」</h3>
+      <p>是什麼：表示說話人想做某件事，意思是「想……」。句型結構：動詞詞幹 + -고 싶어요。短文例句：소포를 보내고 싶어요.（我想寄一個包裹。）再舉一例：커피를 마시고 싶어요.（我想喝咖啡。）容易錯的地方：-고 不能省略，不能說 보내 싶어요；還有，-고 싶어요 只能說自己的願望，說別人的願望時要用 -고 싶어해요。</p>
+      <h3>3. 「ㅂ 不規則變化」：무겁다（重）、가볍다（輕）這類形容詞，詞幹尾音的 ㅂ 在接 -아요/어요 時會變成 ㅜ</h3>
+      <p>是什麼：무겁다（重）、가볍다（輕）這類形容詞，詞幹尾音的 ㅂ 在接 -아요/어요 時會變成 ㅜ。句型結構：무겁다 → 무거워요；가볍다 → 가벼워요。短文例句：이 소포가 무거워요?（這個包裹重嗎？）／아니요, 가벼워요.（不，很輕。）再舉一例：이 책이 가벼워요.（這本書很輕。）容易錯的地方：不能照原形直接加 -어요，說 무겁어요 是錯的；要記得 ㅂ 變成 ㅜ，再加 -워요。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>소포</b> 包裹（so-po）—— 소포를 보내고 싶어요.（我想寄一個包裹。）</li>
+      <li><b>보내다</b> 寄、送（bo-nae-da）—— 부산으로 보내요.（寄到釜山。）</li>
+      <li><b>주소</b> 地址（ju-so）—— 주소를 여기에 써 주세요.（請把地址寫在這裡。）</li>
+      <li><b>무겁다</b> 重（mu-geop-da）—— 이 소포가 무거워요?（這個包裹重嗎？）</li>
+      <li><b>가볍다</b> 輕（ga-gyeop-da）—— 아니요, 가벼워요.（不，很輕。）</li>
+      <li><b>도착하다</b> 到達（do-chak-ha-da）—— 내일 도착해요.（明天到。）</li>
+      <li><b>언제</b> 什麼時候（eon-je）—— 언제 도착해요?（什麼時候到？）</li>
+      <li><b>만 원</b> 一萬韓元（man-won）—— 만 원이에요.（一萬韓元。）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>一句一句慢慢讀，問句句尾要輕輕揚起，像 어디로 보내세요?、얼마예요?、언제 도착해요?，不要讀成平調；重讀 보내고 싶어요、부산으로、가벼워요；注意 무거워요、가벼워요 的 ㅂ 變成 ㅜ，讀成「무거워요」「가벼워요」。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">당신은 소포를 자주 보내요? 😊</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 22 課</p></footer>
+</body>
+</html>
