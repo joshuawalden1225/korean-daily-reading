@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 24 課 · 週末約朋友去公園散步｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 24 課 · 2026-11-21</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">週末約朋友去公園散步</p>
+    <h1>오늘은 토요일이에요.</h1>
+    <p>週末約朋友去公園散步，賞楓葉、喝咖啡、一起拍照。</p>
+    <img class="hero-img" src="../assets/park-walk.jpg" alt="週末約朋友去公園散步場景：公園裡賞楓、坐在長椅上喝咖啡、一起拍照">
+    <div class="korean">
+      <p>오늘은 토요일이에요.</p>
+      <p>날씨가 정말 좋아요.</p>
+      <p>오후 세 시에 친구를 만나요.</p>
+      <p>친구와 공원에 가요.</p>
+      <p>공원에서 산책해요.</p>
+      <p>단풍이 예뻐요.</p>
+      <p>벤치에 앉아서 커피를 마셔요.</p>
+      <p>같이 사진도 찍어요.</p>
+      <p>공원이 집에서 가까워요.</p>
+      <p>오늘 정말 즐거워요.</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/park-walk.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:29）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/park-walk.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>今天是星期六。</li>
+      <li>天氣真的很好。</li>
+      <li>下午三點見朋友。</li>
+      <li>和朋友一起去公園。</li>
+      <li>在公園裡散步。</li>
+      <li>楓葉很漂亮。</li>
+      <li>坐在長椅上喝咖啡。</li>
+      <li>還一起拍照。</li>
+      <li>公園離家很近。</li>
+      <li>今天真的很開心。</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. 「-와/과」：意思是「和、與」，接在名詞後面，表示一起做某事的人或物</h3>
+      <p>是什麼：意思是「和、與」，接在名詞後面，表示一起做某事的人或物。句型結構：名詞 + -와/과（名詞尾音是母音時用 -와，子音時用 -과）。短文例句：친구와 공원에 가요.（和朋友一起去公園。）再舉一例：커피와 빵을 먹어요.（喝咖啡、吃麵包。）容易錯的地方：不要和表示地點的 -에서 搞混；-와/과 是「和誰一起」，不是「在哪裡」。還有，名詞尾音是子音時要用 -과，例如 밥（子音結尾）就要說 밥과 김치，不能說 밥와 김치。</p>
+      <h3>2. 「-에서」：表示動作發生的地點，意思是「在……（地方）做某事」</h3>
+      <p>是什麼：表示動作發生的地點，意思是「在……（地方）做某事」。句型結構：場所名詞 + -에서 + 動詞。短文例句：공원에서 산책해요.（在公園裡散步。）再舉一例：집에서 쉬어요.（在家裡休息。）容易錯的地方：-에서 是「在某地做動作」，-에 是「去某地／在某地（靜止）」；去公園要說 공원에 가요，不能說 공원에서 가요；反過來，在公園散步是動作，要用 -에서，不能說 공원에 산책해요。</p>
+      <h3>3. 「-아서/어서」：連接兩個動作，意思是「先……，再……」</h3>
+      <p>是什麼：連接兩個動作，意思是「先……，再……」。句型結構：動詞詞幹 + -아서/어서（詞幹最後母音是 ㅏ、ㅗ 時用 -아서，其他用 -어서）。短文例句：벤치에 앉아서 커피를 마셔요.（坐在長椅上喝咖啡。）再舉一例：집에 가서 자요.（回家睡覺。）容易錯的地方：-아서/어서 前面的動作要先發生，順序不能倒過來；還有，앉다 的詞幹是 앉-，最後母音是 ㅏ，所以是 앉아서，不是 앉어서。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>토요일</b> 星期六（to-yo-il，近似「托呦一兒」）—— 오늘은 토요일이에요.（今天是星期六。）</li>
+      <li><b>날씨</b> 天氣（nal-ssi，近似「那西」）—— 날씨가 정말 좋아요.（天氣真的很好。）</li>
+      <li><b>친구</b> 朋友（chin-gu）—— 오후 세 시에 친구를 만나요.（下午三點見朋友。）</li>
+      <li><b>공원</b> 公園（gong-won）—— 친구와 공원에 가요.（和朋友一起去公園。）</li>
+      <li><b>산책</b> 散步（san-chaek）—— 공원에서 산책해요.（在公園裡散步。）</li>
+      <li><b>단풍</b> 楓葉、秋葉（dan-pung）—— 단풍이 예뻐요.（楓葉很漂亮。）</li>
+      <li><b>벤치</b> 長椅（ben-chi）—— 벤치에 앉아서 커피를 마셔요.（坐在長椅上喝咖啡。）</li>
+      <li><b>사진</b> 照片（sa-jin）—— 같이 사진도 찍어요.（還一起拍照。）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>一句一句慢慢讀，先在「오후 세 시에」後面稍停一下；「단풍이 예뻐요」的 예뻐요 讀得明亮一點；陳述句句尾「-요」輕輕落下，不要揚起。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">당신은 주말에 보통 뭐 해요?</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 24 課</p></footer>
+</body>
+</html>

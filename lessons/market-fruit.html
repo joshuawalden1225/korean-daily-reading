@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 26 課 · 去市場買水果｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 26 課 · 2026-11-23</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">去市場買水果</p>
+    <h1>안녕하세요.</h1>
+    <p>去市場買水果，問價錢、買蘋果和梨子，練習數數和「주세요」。</p>
+    <img class="hero-img" src="../assets/market-fruit.jpg" alt="去市場買水果場景：傳統市場水果攤上擺滿紅蘋果和黃綠色的梨子，攤主微笑著招呼客人">
+    <div class="korean">
+      <p>안녕하세요.</p>
+      <p>사과 얼마예요?</p>
+      <p>한 개에 천 원이에요.</p>
+      <p>사과 두 개 주세요.</p>
+      <p>배도 있어요?</p>
+      <p>네, 배도 있어요.</p>
+      <p>배는 얼마예요?</p>
+      <p>배도 한 개에 천 원이에요.</p>
+      <p>배 한 개 주세요.</p>
+      <p>모두 삼천 원이에요.</p>
+      <p>여기 있어요. 감사합니다.</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/market-fruit.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:29）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/market-fruit.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好。</li>
+      <li>蘋果多少錢？</li>
+      <li>一個一千韓元。</li>
+      <li>請給我兩個蘋果。</li>
+      <li>也有梨子嗎？</li>
+      <li>是的，也有梨子。</li>
+      <li>梨子多少錢？</li>
+      <li>梨子也是一個一千韓元。</li>
+      <li>請給我一個梨子。</li>
+      <li>總共三千韓元。</li>
+      <li>給你。謝謝。</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. 얼마예요?（多少錢？）</h3>
+      <p>是什麼：問東西的價錢時用的句子。句型結構：名詞 + 얼마예요?。短文例句：사과 얼마예요?（蘋果多少錢？）再舉一例：이 빵 얼마예요?（這個麵包多少錢？）容易錯的地方：問價錢不要只說 얼마?，要說完整的一句 얼마예요?，聽起來才完整、禮貌。</p>
+      <h3>2. 한 개 / 두 개（一個／兩個，數東西的說法）</h3>
+      <p>是什麼：數東西時，前面加固有詞數詞，後面加量詞 -개（個）。句型結構：固有詞數詞 + 개（一個是 한 개，兩個是 두 개，三個是 세 개）。短文例句：사과 두 개 주세요.（請給我兩個蘋果。）再舉一例：커피 세 개 주세요.（請給我三杯咖啡。）容易錯的地方：一個不是 하나 개，要說 한 개；兩個不是 둘 개，要說 두 개；하나、둘 在量詞前面要變成 한、두。</p>
+      <h3>3. 주세요（請給我……）</h3>
+      <p>是什麼：動詞 주다（給）加上禮貌語尾 -세요，買東西時禮貌地請對方把東西給自己。句型結構：名詞 +（數量）+ 주세요。短文例句：사과 두 개 주세요.（請給我兩個蘋果。）再舉一例：물 한 병 주세요.（請給我一瓶水。）容易錯的地方：주세요 就是「請給我」，買東西時直接說東西 + 주세요 就好，不用再加 나에게（給我），聽起來很囉嗦。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>사과</b> 蘋果（sa-ga）—— 사과 두 개 주세요.（請給我兩個蘋果。）</li>
+      <li><b>배</b> 梨子（bae）—— 배도 있어요?（也有梨子嗎？）</li>
+      <li><b>얼마</b> 多少（價錢）（eol-ma）—— 사과 얼마예요?（蘋果多少錢？）</li>
+      <li><b>개</b> 個（數東西的量詞）（gae）—— 한 개에 천 원이에요.（一個一千韓元。）</li>
+      <li><b>천 원</b> 一千韓元（cheon won）—— 한 개에 천 원이에요.（一個一千韓元。）</li>
+      <li><b>모두</b> 總共、全部（mo-du）—— 모두 삼천 원이에요.（總共三千韓元。）</li>
+      <li><b>시장</b> 市場（si-jang）—— 시장에서 사과를 사요.（在市場買蘋果。）</li>
+      <li><b>감사합니다</b> 謝謝（gam-sa-ham-ni-da）—— 여기 있어요. 감사합니다.（給你。謝謝。）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>數字要讀清楚：한 개、두 개、삼천 원；問句 사과 얼마예요?、배도 있어요? 句尾輕輕揚起；주세요 讀得輕一點、禮貌一點。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">당신은 사과를 좋아해요?</p>
+    <p>（你喜歡蘋果嗎？）</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 26 課</p></footer>
+</body>
+</html>

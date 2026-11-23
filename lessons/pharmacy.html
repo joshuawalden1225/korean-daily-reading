@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 23 課 · 藥局買藥｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 23 課 · 2026-11-20</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">藥局買藥</p>
+    <h1>안녕하세요. 약을 사고 싶어요.</h1>
+    <p>在藥局買藥，學說頭痛、咳嗽、發燒和「一天吃三次」。</p>
+    <img class="hero-img" src="../assets/pharmacy.jpg" alt="藥局買藥場景：藥劑師在藥局櫃檯把藥交給客人，藥架和水杯">
+    <div class="korean">
+      <p>안녕하세요. 약을 사고 싶어요.</p>
+      <p>어디가 아파요?</p>
+      <p>머리가 아파요.</p>
+      <p>기침도 나요.</p>
+      <p>열도 있어요.</p>
+      <p>이 약을 드세요.</p>
+      <p>하루에 세 번 드세요.</p>
+      <p>식사 후에 드세요.</p>
+      <p>물과 함께 드세요.</p>
+      <p>얼마예요?</p>
+      <p>오천 원이에요.</p>
+      <p>푹 쉬세요.</p>
+      <p>감사합니다. 빨리 나으세요.</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/pharmacy.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:36）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/pharmacy.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好，我想買藥。</li>
+      <li>哪裡不舒服？</li>
+      <li>頭痛。</li>
+      <li>也咳嗽。</li>
+      <li>還有發燒。</li>
+      <li>請吃這個藥。</li>
+      <li>一天吃三次。</li>
+      <li>飯後吃。</li>
+      <li>請和水一起吃。</li>
+      <li>多少錢？</li>
+      <li>五千韓元。</li>
+      <li>請好好休息。</li>
+      <li>謝謝。祝你早日康復。</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. 「-이/가」：主格助詞，接在名詞後面，表示句子的主語，意思是「……（是）」</h3>
+      <p>是什麼：主格助詞，接在名詞後面，表示句子的主語，意思是「……（是）」。句型結構：名詞 + -이/가（名詞尾音是子音時用 -이，母音時用 -가）。短文例句：어디가 아파요?（哪裡不舒服？）／머리가 아파요.（頭痛。）再舉一例：배가 아파요.（肚子痛。）容易錯的地方：不要和表示賓語的 -을/를 搞混；說身體哪裡痛時，主語是身體部位，要用 -이/가，不能說 머리를 아파요。</p>
+      <h3>2. 「-에 + 數字 + 번」：表示頻率，意思是「在……（時間）裡……次」</h3>
+      <p>是什麼：表示頻率，意思是「在……（時間）裡……次」。句型結構：時間詞 + 에 + 數字 + 번。短文例句：하루에 세 번 드세요.（一天吃三次。）再舉一例：일주일에 두 번 운동해요.（一週運動兩次。）容易錯的地方：-에 不能省略，不能說 하루 세 번；還有，번 前面一定要加數字，不能只說 번。</p>
+      <h3>3. 「-세요」：客氣的請求或命令形，意思是「請……」，對長輩或客人說話時用</h3>
+      <p>是什麼：客氣的請求或命令形，意思是「請……」，對長輩或客人說話時用。句型結構：動詞詞幹 + -세요。短文例句：이 약을 드세요.（請吃這個藥。）／푹 쉬세요.（請好好休息。）再舉一例：앉으세요.（請坐。）容易錯的地方：-세요 是請別人做某事，不能用來說自己要做的事；說自己要吃藥時要用 -ㄹ게요，例如 약을 먹을게요。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>약</b> 藥（yak，近似「呀」）—— 약을 사고 싶어요.（我想買藥。）</li>
+      <li><b>머리</b> 頭（meo-ri）—— 머리가 아파요.（頭痛。）</li>
+      <li><b>아프다</b> 痛、不舒服（a-peu-da）—— 어디가 아파요?（哪裡不舒服？）</li>
+      <li><b>기침</b> 咳嗽（gi-chim）—— 기침도 나요.（也咳嗽。）</li>
+      <li><b>열</b> 發燒、體溫高（yeol，近似「要兒」）—— 열도 있어요.（還有發燒。）</li>
+      <li><b>하루</b> 一天（ha-ru）—— 하루에 세 번 드세요.（一天吃三次。）</li>
+      <li><b>번</b> 次、回（beon）—— 하루에 세 번 드세요.（一天吃三次。）</li>
+      <li><b>식사</b> 用餐、吃飯（sik-sa）—— 식사 후에 드세요.（飯後吃。）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>一句一句慢慢讀，先在「약을 사고 싶어요」和「어디가 아파요?」之間停一下；問句「어디가 아파요?」和「얼마예요?」句尾要輕輕揚起；「푹 쉬세요」的 푹 讀得短而輕，表示「充分地」。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">당신은 감기에 자주 걸려요?</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 23 課</p></footer>
+</body>
+</html>
