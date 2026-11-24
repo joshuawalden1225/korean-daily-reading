@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 27 課 · 去理髮店剪頭髮｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 27 課 · 2026-11-24</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">去理髮店剪頭髮</p>
+    <h1>안녕하세요.</h1>
+    <p>去理髮店剪頭髮，學說「想剪頭髮」、問怎麼剪、洗頭和問價錢。</p>
+    <img class="hero-img" src="../assets/haircut.jpg" alt="去理髮店剪頭髮場景：理髮師在圓鏡前幫客人剪頭髮，旁邊有洗頭椅和粉彩瓶子">
+    <div class="korean">
+      <p>안녕하세요.</p>
+      <p>머리를 자르고 싶어요.</p>
+      <p>어떻게 자를까요?</p>
+      <p>조금만 짧게 해 주세요.</p>
+      <p>앞머리도 조금 잘라 주세요.</p>
+      <p>샴푸도 해 주세요.</p>
+      <p>네, 좋아요.</p>
+      <p>거울을 봐 주세요.</p>
+      <p>아주 좋아요.</p>
+      <p>얼마예요?</p>
+      <p>만 오천 원이에요.</p>
+      <p>여기 있어요.</p>
+      <p>감사합니다. 다음에 또 오세요.</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/haircut.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:33）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/haircut.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好。</li>
+      <li>我想剪頭髮。</li>
+      <li>要怎麼剪呢？</li>
+      <li>請幫我剪短一點就好。</li>
+      <li>瀏海也請幫我剪短一點。</li>
+      <li>也請幫我洗頭。</li>
+      <li>好的，沒問題。</li>
+      <li>請看一下鏡子。</li>
+      <li>非常好。</li>
+      <li>多少錢？</li>
+      <li>一萬五千韓元。</li>
+      <li>給你。</li>
+      <li>謝謝。下次再來。</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. -고 싶어요（想做……）</h3>
+      <p>是什麼：表示「想做某件事」的願望，是初級最常用的說法之一。句型結構：動詞詞幹 + -고 싶어요。短文例句：머리를 자르고 싶어요.（我想剪頭髮。）再舉一例：커피를 마시고 싶어요.（我想喝咖啡。）容易錯的地方：-고 싶어요 前面要接動詞詞幹，不能直接接名詞；說「머리 싶어요」是錯的，要說「머리를 자르고 싶어요」。</p>
+      <h3>2. -(으)ㄹ까요?（要……嗎？徵求對方意見）</h3>
+      <p>是什麼：向對方提問、徵求意見或提議時用的問法，語氣很客氣。句型結構：動詞詞幹 + -(으)ㄹ까요?（詞幹以母音結尾用 -ㄹ까요，以子音結尾用 -을까요）。短文例句：어떻게 자를까요?（要怎麼剪呢？）再舉一例：뭘 먹을까요?（要吃什麼呢？）容易錯的地方：詞幹以 ㄹ 結尾時，ㄹ 和 -ㄹ까요 合併成一個 ㄹ，자르다 變成 자를까요，不是 자르을까요。</p>
+      <h3>3. -게（把形容詞變成副詞，「……地」）</h3>
+      <p>是什麼：形容詞詞幹 + -게，變成副詞，用來修飾動詞，意思是「……地」。句型結構：形容詞詞幹 + -게 + 動詞。短文例句：조금만 짧게 해 주세요.（請幫我剪短一點就好。）再舉一例：크게 말해 주세요.（請大聲說。）容易錯的地方：-게 後面要接動詞，不能接名詞；「짧게 머리」是錯的，要說「짧게 자르다」或「짧게 해 주세요」。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>머리</b> 頭髮（meo-ri）—— 머리를 자르고 싶어요.（我想剪頭髮。）</li>
+      <li><b>자르다</b> 剪、切（ja-reu-da）—— 어떻게 자를까요?（要怎麼剪呢？）另一個例句：종이를 자르다.（剪紙。）</li>
+      <li><b>조금</b> 一點、少許（jo-geum）—— 조금만 짧게 해 주세요.（請幫我剪短一點就好。）另一個例句：조금 기다려 주세요.（請稍等一下。）</li>
+      <li><b>짧다</b> 短的（jjal-da）—— 짧게 해 주세요.（請剪短一點。）另一個例句：머리가 짧아요.（頭髮很短。）</li>
+      <li><b>앞머리</b> 瀏海、前額的頭髮（am-meo-ri）—— 앞머리도 조금 잘라 주세요.（瀏海也請幫我剪短一點。）</li>
+      <li><b>샴푸</b> 洗髮精；洗頭（syam-pu）—— 샴푸도 해 주세요.（也請幫我洗頭。）另一個例句：샴푸를 사요.（買洗髮精。）</li>
+      <li><b>거울</b> 鏡子（geo-ul）—— 거울을 봐 주세요.（請看一下鏡子。）另一個例句：거울을 봐요.（看鏡子。）</li>
+      <li><b>만 오천 원</b> 一萬五千韓元（man o-cheon won）—— 만 오천 원이에요.（一萬五千韓元。）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>短句很短，一句一句慢慢讀就好；「조금만 짧게 해 주세요」可以分成「조금만／짧게／해 주세요」三段來讀；問句「어떻게 자를까요?」「얼마예요?」句尾要輕輕揚起來；「주세요」讀得輕一點、柔和一點，聽起來更禮貌。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">머리가 길어요? 짧아요?</p>
+    <p>（你的頭髮長嗎？還是短？）</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 27 課</p></footer>
+</body>
+</html>
