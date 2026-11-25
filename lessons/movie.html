@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 28 課 · 去電影院看電影｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 28 課 · 2026-11-25</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">去電影院看電影</p>
+    <h1>민수 씨, 오늘 저녁에 영화 보러 갈까요?</h1>
+    <p>去電影院看電影，邀朋友一起看電影、買票、買爆米花和可樂。</p>
+    <img class="hero-img" src="../assets/movie.jpg" alt="去電影院看電影場景：溫馨的電影院大廳有售票櫃檯、兩張票、爆米花和可樂，後面是柔和發光的大螢幕和紅色座椅">
+    <div class="korean">
+      <p>민수 씨, 오늘 저녁에 영화 보러 갈까요?</p>
+      <p>좋아요! 무슨 영화를 봐요?</p>
+      <p>새 영화가 재미있어요.</p>
+      <p>영화는 일곱 시에 시작해요.</p>
+      <p>표 두 장 주세요.</p>
+      <p>우리는 앞에 앉아요.</p>
+      <p>팝콘하고 콜라도 사요.</p>
+      <p>영화가 정말 재미있어요.</p>
+      <p>영화가 끝나고 커피 마셔요.</p>
+      <p>다음에 또 같이 봐요.</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/movie.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:31）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/movie.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>民秀，今天晚上一起去看電影好嗎？</li>
+      <li>好啊！看什麼電影？</li>
+      <li>新電影很好看。</li>
+      <li>電影七點開始。</li>
+      <li>請給我兩張票。</li>
+      <li>我們坐前面。</li>
+      <li>也買爆米花和可樂。</li>
+      <li>電影真的很好看。</li>
+      <li>電影結束後去喝咖啡。</li>
+      <li>下次再一起看。</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. -러 가다（去做……）</h3>
+      <p>是什麼：動詞詞幹 + -러 가다，表示「為了做某件事而去」。句型結構：動詞詞幹 + -러 + 가다／오다。短文例句：영화 보러 갈까요?（去看電影好嗎？）再舉一例：커피 마시러 가요.（去喝咖啡。）容易錯的地方：-러 前面一定要接動詞詞幹，不能直接接名詞，說「영화러 가요」是錯的，要說「영화 보러 가요」。</p>
+      <h3>2. -(으)ㄹ까요?（……好嗎？提議、徵求對方意見）</h3>
+      <p>是什麼：動詞詞幹 + -(으)ㄹ까요?，用來提議或問對方覺得怎麼樣。句型結構：母音結尾的詞幹 + -ㄹ까요?；子音結尾的詞幹 + -을까요?。短文例句：영화 보러 갈까요?（去看電影好嗎？）再舉一例：같이 먹을까요?（一起吃好嗎？）容易錯的地方：가다 的詞幹是 가（母音結尾），所以是 갈까요，不是 가을까요；먹다 是子音結尾，所以是 먹을까요。</p>
+      <h3>3. -하고（和）</h3>
+      <p>是什麼：名詞 + -하고 + 名詞，表示「和、跟」。句型結構：名詞 + -하고 + 名詞。短文例句：팝콘하고 콜라도 사요.（也買爆米花和可樂。）再舉一例：민수하고 영희가 와요.（民秀和英熙來了。）容易錯的地方：-하고 要放在兩個名詞中間，不能放在句尾；「팝콘하고」不能單獨成句，後面一定要有名詞或動詞。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>영화</b> 電影（yeong-hwa）—— 무슨 영화를 봐요?（看什麼電影？）</li>
+      <li><b>표</b> 票（pyo）—— 표 두 장 주세요.（請給我兩張票。）</li>
+      <li><b>팝콘</b> 爆米花（pap-kon）—— 팝콘하고 콜라도 사요.（也買爆米花和可樂。）</li>
+      <li><b>콜라</b> 可樂（kol-la）—— 팝콘하고 콜라도 사요.（也買爆米花和可樂。）</li>
+      <li><b>시작하다</b> 開始（si-ja-ka-da）—— 영화는 일곱 시에 시작해요.（電影七點開始。）</li>
+      <li><b>재미있다</b> 有趣、好玩（jae-mi-it-da）—— 영화가 정말 재미있어요.（電影真的很好看。）</li>
+      <li><b>저녁</b> 晚上（jeo-nyeok）—— 오늘 저녁에 영화 보러 갈까요?（今天晚上一起去看電影好嗎？）</li>
+      <li><b>앞</b> 前面（ap）—— 우리는 앞에 앉아요.（我們坐前面。）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>「일곱 시에」慢慢唸，數字和時間分開斷句；問句「갈까요?」句尾輕輕上揚；「정말」重讀一點，表示「真的」。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">어떤 영화를 좋아해요?</p>
+    <p>（你喜歡看什麼電影？）</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 28 課</p></footer>
+</body>
+</html>
