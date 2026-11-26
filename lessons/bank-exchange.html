@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 29 課 · 去銀行換錢｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 29 課 · 2026-11-26</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">去銀行換錢</p>
+    <h1>안녕하세요.</h1>
+    <p>去銀行換錢，把美元換成韓元、問匯率和手續費。</p>
+    <img class="hero-img" src="../assets/bank-exchange.jpg" alt="去銀行換錢場景：明亮溫馨的銀行大廳，櫃檯後的職員微笑著遞出鈔票，顧客開心地接過，窗邊灑進柔和的陽光">
+    <div class="korean">
+      <p>안녕하세요.</p>
+      <p>돈을 바꾸고 싶어요.</p>
+      <p>달러를 원으로 바꾸고 싶어요.</p>
+      <p>오늘 환율이 어떻게 돼요?</p>
+      <p>천 달러예요.</p>
+      <p>수수료가 있어요?</p>
+      <p>네, 수수료가 있어요.</p>
+      <p>여기에 서명해 주세요.</p>
+      <p>잠시만 기다려 주세요.</p>
+      <p>여기 원이에요.</p>
+      <p>감사합니다.</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/bank-exchange.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:27）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/bank-exchange.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好。</li>
+      <li>我想換錢。</li>
+      <li>我想把美元換成韓元。</li>
+      <li>今天的匯率怎麼樣？</li>
+      <li>是一千美元。</li>
+      <li>有手續費嗎？</li>
+      <li>有的，有手續費。</li>
+      <li>請在這裡簽名。</li>
+      <li>請稍等一下。</li>
+      <li>這是韓元。</li>
+      <li>謝謝。</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. -(으)로（換成……、變成……）</h3>
+      <p>是什麼：名詞 + -(으)로，表示動作的結果或方向，「換成、變成」的意思。句型結構：名詞 + -(으)로 + 動詞（詞幹以子音結尾用 -으로，母音結尾用 -로）。短文例句：달러를 원으로 바꾸고 싶어요.（我想把美元換成韓元。）再舉一例：물을 주스로 바꿔 주세요.（請把水換成果汁。）容易錯的地方：-로 前面是名詞，不是動詞；원 以 ㄴ 結尾，是子音結尾，所以用 -으로，說「원으로」是對的，「원로」是錯的。</p>
+      <h3>2. -이/가 있어요（有……）</h3>
+      <p>是什麼：名詞 + -이/가 있어요，表示「有某樣東西」，是初級最常用的句型之一。句型結構：名詞 + -이/가 + 있어요（名詞以子音結尾用 -이，母音結尾用 -가）。短文例句：수수료가 있어요?（有手續費嗎？）再舉一例：시간이 있어요.（我有時間。）容易錯的地方：수수료 以母音 료 結尾，所以用 -가，不是 -이；問句只要把句尾揚起來，不用加問號以外的詞。</p>
+      <h3>3. -에（在……、到……）</h3>
+      <p>是什麼：名詞 + -에，表示動作發生的地點或方向，「在、到」的意思。句型結構：名詞 + -에 + 動詞。短文例句：여기에 서명해 주세요.（請在這裡簽名。）再舉一例：은행에 가요.（去銀行。）容易錯的地方：-에 不能用在人身上，說「민수에 가요」是錯的；表示「和某人一起」要用 -하고 或 -랑。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>돈</b> 錢（don）—— 돈을 바꾸고 싶어요.（我想換錢。）</li>
+      <li><b>달러</b> 美元（dal-leo）—— 천 달러예요.（是一千美元。）</li>
+      <li><b>원</b> 韓元（won）—— 여기 원이에요.（這是韓元。）</li>
+      <li><b>환율</b> 匯率（hwan-yul）—— 오늘 환율이 어떻게 돼요?（今天的匯率怎麼樣？）</li>
+      <li><b>수수료</b> 手續費（su-su-ryo）—— 수수료가 있어요?（有手續費嗎？）</li>
+      <li><b>바꾸다</b> 換、兌換（ba-kku-da）—— 달러를 원으로 바꿔요.（把美元換成韓元。）</li>
+      <li><b>서명</b> 簽名（seo-myeong）—— 여기에 서명해 주세요.（請在這裡簽名。）</li>
+      <li><b>기다리다</b> 等待（gi-da-ri-da）—— 잠시만 기다려 주세요.（請稍等一下。）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>一句一句慢慢讀，問句「수수료가 있어요?」句尾要輕輕揚起來；「바꾸고 싶어요」裡的「바꾸」要讀得清楚一點，重音放在第一個音節。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">오늘 뭐 하고 싶어요?</p>
+    <p>（今天想做什麼？）</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 29 課</p></footer>
+</body>
+</html>
