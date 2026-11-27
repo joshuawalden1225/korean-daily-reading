@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 30 課 · 去書店買書｜每日韓語跟讀</title>
+<link rel="stylesheet" href="../style.css">
+<style>body{margin:0;background:#fff8f0;color:#22223b;font-family:system-ui,-apple-system,"PingFang TC",sans-serif;line-height:1.7}.topbar{max-width:980px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between}.topbar a{color:#22223b;text-decoration:none;font-weight:800}main{max-width:980px;margin:0 auto;padding:20px}.lesson{background:#fff;border:2px solid #f1e3d3;border-radius:24px;padding:28px}.lesson img.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:18px}.korean{font-size:19px;background:#f8fbff;border-left:6px solid #a2d2ff;border-radius:12px;padding:16px 20px}audio{width:100%;margin:16px 0}.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;border:2px solid #22223b;text-decoration:none}.btn.primary{background:#22223b;color:#fff}.question{background:#fff3bf;border-radius:12px;padding:14px;font-weight:700}</style>
+</head>
+<body>
+<header class="topbar"><a href="../index.html">← 回首頁</a><span>第 30 課 · 2026-11-27</span></header>
+<main>
+  <article class="lesson">
+    <p style="color:#6b7280;font-size:14px;">提示：如果頁面變成純文字、沒有圖片和播放按鈕，說明 Safari 閱讀器模式開了，點地址欄的書本圖標退出閱讀器，即可恢復彩色頁面。</p>
+    <p class="lesson-tag">去書店買書</p>
+    <h1>안녕하세요.</h1>
+    <p>去書店買書，問價錢、問打折，用卡結帳。</p>
+    <img class="hero-img" src="../assets/bookstore.jpg" alt="去書店買書場景：溫馨的書店裡，女孩抱著一本書和戴眼鏡的店員微笑聊天，書架上擺滿彩色書本，窗邊灑進柔和的陽光">
+    <div class="korean">
+      <p>안녕하세요.</p>
+      <p>저는 책을 좋아해요.</p>
+      <p>책을 사고 싶어요.</p>
+      <p>이 책은 얼마예요?</p>
+      <p>만 원이에요.</p>
+      <p>조금 비싸요.</p>
+      <p>할인이 돼요?</p>
+      <p>네, 오늘은 세일이에요.</p>
+      <p>이 책은 재미있어요.</p>
+      <p>두 권 살게요.</p>
+      <p>카드로 계산할게요.</p>
+      <p>여기에 서명해 주세요.</p>
+      <p>감사합니다.</p>
+      <p>내일 또 올게요.</p>
+    </div>
+    <audio id="lesson-audio" controls preload="metadata"><source src="../audio/bookstore.mp3" type="audio/mpeg"></audio>
+    <p><button class="btn primary" onclick="toggleAudio()">▶ 播放本課朗讀（約 0:33）</button></p>
+    <p id="audio-status">還沒播放，點上面的大按鈕開始。</p>
+    <p class="audio-note">慢速女聲朗讀，先聽一遍，再一句一句跟讀。如果大按鈕點了還是沒聲音，請點<a href="../audio/bookstore.mp3">直接打開音頻</a>，或點下面的備用朗讀。</p>
+    <script>
+    function toggleAudio(){
+      var a = document.getElementById('lesson-audio');
+      var s = document.getElementById('audio-status');
+      a.onerror = function(){ s.textContent = '音頻加載失敗，請點下面的“直接打開音頻”。'; };
+      a.onended = function(){ s.textContent = '播放完了。'; };
+      if(a.paused){
+        var p = a.play();
+        if(p && p.catch){ p.then(function(){ s.textContent = '正在播放……'; }).catch(function(){ s.textContent = '播放被擋住了，請點下面的“直接打開音頻”。'; }); }
+        else { s.textContent = '正在播放……'; }
+      } else { a.pause(); s.textContent = '已暫停。'; }
+    }
+    </script>
+    <button class="btn ghost" onclick="readKorean()">瀏覽器朗讀（備用）</button>
+    <script>
+    function readKorean(){
+      var lines = Array.from(document.querySelectorAll('.korean p')).map(function(p){return p.textContent});
+      var synth = window.speechSynthesis; synth.cancel();
+      lines.forEach(function(t){var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.8; synth.speak(u);});
+    }
+    </script>
+    <h2>逐句翻譯</h2>
+    <ul class="trans">
+      <li>你好。</li>
+      <li>我喜歡看書。</li>
+      <li>我想買書。</li>
+      <li>這本書多少錢？</li>
+      <li>一萬韓元。</li>
+      <li>有點貴。</li>
+      <li>可以打折嗎？</li>
+      <li>可以，今天特價。</li>
+      <li>這本書很有趣。</li>
+      <li>我買兩本。</li>
+      <li>我用卡結帳。</li>
+      <li>請在這裡簽名。</li>
+      <li>謝謝。</li>
+      <li>明天我再來。</li>
+    </ul>
+    <h2>文法講解</h2>
+    <div class="grammar">
+      <h3>1. -을/를（受格助詞，動作的對象）</h3>
+      <p>是什麼：名詞 + -을/를，表示動詞的對象，「把……、……」的意思。句型結構：名詞 + -을/를 + 動詞（名詞以子音結尾用 -을，母音結尾用 -를）。短文例句：책을 사고 싶어요.（我想買書。）再舉一例：커피를 마셔요.（我喝咖啡。）容易錯的地方：-을/를 只接在動作的對象後面，主詞不能用；책 以子音 ㄱ 結尾，所以用 -을，說「책를」是錯的。</p>
+      <h3>2. 얼마예요?（多少錢？）</h3>
+      <p>是什麼：問東西的價錢時用的句型，「多少錢」的意思。句型結構：名詞 + -은/는 얼마예요?（名詞以子音結尾用 -은，母音結尾用 -는）。短文例句：이 책은 얼마예요?（這本書多少錢？）再舉一例：이 가방은 얼마예요?（這個包多少錢？）容易錯的地方：얼마 是問價錢，不要和 얼마나（多麼、多長）混用；問價錢時句尾要揚起來。</p>
+      <h3>3. -(으)로（用……、以……）</h3>
+      <p>是什麼：名詞 + -(으)로，表示用的工具或方法，「用……」的意思。句型結構：名詞 + -(으)로 + 動詞（名詞以子音結尾用 -으로，母音結尾用 -로）。短文例句：카드로 계산할게요.（我用卡結帳。）再舉一例：버스로 가요.（我坐公車去。）容易錯的地方：카드 以母音 드 結尾，所以用 -로，說「카드으로」是錯的；-로 前面是名詞，不是動詞。</p>
+    </div>
+    <h2>常用詞彙</h2>
+    <ul class="vocab">
+      <li><b>책</b> 書（chaek）—— 책을 사고 싶어요.（我想買書。）</li>
+      <li><b>서점</b> 書店（seo-jeom）—— 서점에 가요.（去書店。）</li>
+      <li><b>얼마</b> 多少錢（eol-ma）—— 이 책은 얼마예요?（這本書多少錢？）</li>
+      <li><b>만 원</b> 一萬韓元（man won）—— 만 원이에요.（一萬韓元。）</li>
+      <li><b>비싸다</b> 貴（bi-ssa-da）—— 조금 비싸요.（有點貴。）</li>
+      <li><b>할인</b> 打折、折扣（hal-in）—— 할인이 돼요?（可以打折嗎？）</li>
+      <li><b>카드</b> 卡（ka-deu）—— 카드로 계산할게요.（我用卡結帳。）</li>
+      <li><b>계산하다</b> 結帳（gye-san-ha-da）—— 카드로 계산할게요.（我用卡結帳。）</li>
+    </ul>
+    <h2>跟讀小提示</h2>
+    <p>一句一句慢慢讀，問句「이 책은 얼마예요?」「할인이 돼요?」句尾要輕輕揚起來；「계산할게요」裡的「계산」要讀得清楚一點，重音放在第一個音節。</p>
+    <h2>留給你的問題</h2>
+    <p class="question">오늘 뭐 사고 싶어요?</p>
+    <p>（今天想買什麼？）</p>
+    <p><a class="back" href="../index.html">← 回首頁</a></p>
+  </article>
+</main>
+<footer><p>每日韓語跟讀 · 第 30 課</p></footer>
+</body>
+</html>
